@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="styles/loginStyle.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    </head>
+    <body>
+        <div class="registrationInfo">
+            <h3>Fill in your details : </h3>
+            <form class="form" name="registrationForm" onsubmit="return validateForm()" method="post">
+                <div class="regField"><span class="regText">$team_name > </span> <input class="regInput" type="text" name="teamName"></div>
+                <div class="regField"><span class="regText">$members >  </span> <input class="regInput" type="text" name="members" placeholder="Names of members (comma separated)"></div>
+                <div class="regField"><span class="regText">$semester > </span><input class="regInput" type="number" name="semester"></div>
+                <button class="getHacking" type="submit"> <i class="fa fa-code" style="color:#CB772F"></i> Get to Hacking !</button></div>
+            </form>
+        </div>
+    </body>
+</html>
