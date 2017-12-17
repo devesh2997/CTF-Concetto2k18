@@ -15,7 +15,13 @@ TeamManagement.prototype.init = function(){
 }
 
 TeamManagement.prototype.prompt = function(){
-    terminal.input("$ctf@concetto'18>",function(input){
+    var msg;
+    if(TeamManagement.prototype.teamName == null){
+        msg = "$ctf@concetto'18>";
+    }else{
+        msg = '$'+TeamManagement.prototype.teamName+"@concetto'18>";
+    }
+    terminal.input(msg,function(input){
         cmd = input.slice(input.lastIndexOf('>')+1);
         TeamManagement.prototype.processCommand(cmd);             
     });
@@ -25,9 +31,22 @@ TeamManagement.prototype.prompt = function(){
 
 TeamManagement.prototype.processCommand = function(cmd){
     if(cmd.indexOf(cmdAddTeam)>-1){
-        name = cmd.slice(12);
-        TeamManagement.prototype.addTeam(cmd.slice(12));
-    }else{
+        name = cmd.slice(13);
+        if(TeamManagement.prototype.teamName == null){
+            TeamManagement.prototype.addTeam(name);
+        }else{
+            terminal.print("Team name has already been set. Proceed to enter team members and contact.");
+            TeamManagement.prototype.prompt();
+        }        
+    }else if(cmd.indexOf(cmdAddTeamMembers)>-1){
+        members = cmd.slice(16);
+        
+    }
+    else if(cmd.indexOf('clear')>-1){
+        terminal.clear();
+        TeamManagement.prototype.prompt();
+    }
+    else{
         msg = cmd+' is not recognized as an internal or and external command.';
         terminal.print(msg);
         TeamManagement.prototype.prompt();
@@ -52,6 +71,7 @@ TeamManagement.prototype.addTeam= function(team_name) {
                 if(response.result.success){
                     terminal.print(response.result.msg);
                     TeamManagement.prototype.teamName = team_name;
+                    TeamManagement.prototype.prompt();
                 }else{
                     terminal.print(response.result.msg);
                     TeamManagement.prototype.prompt();

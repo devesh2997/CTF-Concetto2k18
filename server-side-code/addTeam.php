@@ -19,10 +19,18 @@
    }else{
      $response["isAvailable"]=false;
    }
-
    echo json_encode($response);
+ }else if(isset($_POST['team_members']) && $_POST['team_members']!=""){
+    $team_members = $_POST['team_members'];
+  
+    $result = $db->addTeamMembers($team_members);
+  
+    echo json_encode($result);
+ }else if(isset($_POST['team_contact']) && $_POST['team_contact']!=""){
+  $team_contact = $_POST['team_contact'];
 
-
- }
+  $result = $db->isTeamNameAvailable($team_contact);
+  echo json_encode($result);
+}
 
 ?>
