@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Register</title>
+        <link rel="stylesheet" type="text/css" href="styles/loginTerminalStyle.css">
+        <style>
+            html{
+                width: auto;
+                background-color:black;
+                margin:0px;
+                padding: 0px;
+            }
+            body{
+                margin: 0px;
+                padding: 0px;
+            }
+            .cmd_list{
+                width: auto;
+                display: block;
+                border-width: 5px 0px 0px 0px;
+                border-color: white;
+
+    position: absolute;
+    bottom: 0px;
+    margin: 20px;
+}
+
+.cmds{
+    color: white;
+    width: 500px;
+    padding: 5px;
+}
+        </style>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script type="text/javascript" src="scripts/terminal.js"></script>
+        <script type="text/javascript" src="scripts/teamManagement.js"></script>
+    </head>
+    <body>
+        <script>
+            var teamManagement = new TeamManagement();
+            teamManagement.init();
+        </script>
+
+        <footer class="cmd_list">
+            <span class="cmds">1. ctf_add_team [team_name] </span>
+            <span class="cmds">2. ctf_add_members [member names separated with comma]</span>
+            <span class="cmds">3. ctf_add_contact [mobile]</span>
+        </footer>
+
+    </body>
+</html>

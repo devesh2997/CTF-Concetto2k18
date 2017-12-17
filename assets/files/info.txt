@@ -1,0 +1,4 @@
+<span id="a">ctf@concetto'18</span>:<span id="b">~</span><span id="c">$</span> cat info.txt<br/><br/>
+Hi, This is the organising team of this event.<!-- laglaglaglaglaglaglaglaglaglaglaglag --><p>We are proud to present the first ever CTF style event held in IIT (ISM) Dhanbad</p><!-- qowifjqwoeijfoqweijfqweoifjqweofijqweoqwoijefoqwijefoijfqiwoefjj -->
+<!- oqwipjefqwioefjwioqfjoiqwjfeioqwjefoi -->
+Capture the Flag (CTF) is a special kind of information security competition. Jeopardy-style CTFs has a couple of questions (tasks) in range of categories. For example: Web, Forensic, Cryptography, Binary or something else.

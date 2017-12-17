@@ -1,0 +1,17 @@
+body{
+    width: auto;
+    background-color:yellow;
+    margin:0px;
+    padding: 0px;
+}
+
+.cmd_list{
+    position: absolute;
+    bottom: 0px;
+}
+
+.cmds{
+    color: yellow;
+    width: 300px;
+    padding: 5px;
+}
