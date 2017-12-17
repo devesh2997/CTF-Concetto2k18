@@ -11,15 +11,17 @@
    $team_name = $_POST['team_name'];
    $team_password = $_POST['team_password'];
 
-   $result = $db->isTeamNameAvailable($team_name);
+   $result = $db->login($team_name,$team_password);
 
-   if($result){
-     $response["isAvailable"]=true;
-     $response["result"]=$db->addTeam($team_name,$team_password);
-   }else{
-     $response["isAvailable"]=false;
+   if($result['success']){
+    session_start();
+    $_SESSION['team_name'] = $team_name;
+    $_SESSION['id'] = 'test';
    }
-   echo json_encode($response);
+
+   //echo json_encode($_SESSION);
+   
+   echo json_encode($result);
  }
 
 ?>
