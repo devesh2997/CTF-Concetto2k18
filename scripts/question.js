@@ -3,7 +3,6 @@ function Question(id,text,hint,point,flag){
     this.id = id;
     this.text = text;
     this.hint = hint;
-    this.point = point;
     this.flag = flag;
 }
 
