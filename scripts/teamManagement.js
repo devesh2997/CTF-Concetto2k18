@@ -4,6 +4,7 @@ var cmdAddTeam = 'ctf_add_team ';
 var cmdAddTeamMembers = 'ctf_add_members ';
 var cmdAddContact = 'ctf_add_contact ';
 var cmdLogin = 'login ';
+var cmdLogout = 'logout';
 
 function TeamManagement(){
     terminal = new Terminal("terminal");
@@ -78,6 +79,8 @@ TeamManagement.prototype.processCommand = function(cmd){
             terminal.print(msg);
             TeamManagement.prototype.prompt();
         }
+    }else if(cmd.indexOf(cmdLogout) > -1){
+        TeamManagement.prototype.logout();
     }else if(cmd == 'help'){
         msg = '  ctf_add_team <team_name>      -> register your team.'; 
         terminal.print(msg);
@@ -120,6 +123,30 @@ TeamManagement.prototype.login = function(team_name, team_password){
     xhttp.open("POST", "http://localhost/CTF-Concetto2k18/server-side-code/login.php", true);
     xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xhttp.send("team_name="+team_name+"&team_password="+team_password);
+}
+
+TeamManagement.prototype.logout = function(){
+    if(TeamManagement.prototype.teamName == null){
+        terminal.print("no team logged in.");
+        TeamManagement.prototype.prompt();
+    }else{
+        terminal.print("Logging out...");
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function(){
+            if(this.readyState == 4 && this.status == 200){
+                console.log("test");
+                TeamManagement.prototype.teamName = null;
+                TeamManagement.prototype.prompt();
+            }else if(this.readyState == 4 && this.status != 200){
+                terminal.print("Some error ocurred in logging you out, try again.")
+                TeamManagement.prototype.prompt();
+            }
+        }
+        xhttp.open("GET", "http://localhost/CTF-Concetto2k18/server-side-code/logout.php", true);
+        xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        xhttp.send();
+    }
+    
 }
 
 
@@ -173,8 +200,7 @@ TeamManagement.prototype.submitTeamPassword = function(team_name,team_password){
                 msg = response.result.msg;
                 terminal.print(msg);
                 if(response.result.success){                    
-                    TeamManagement.prototype.teamName = team_name;
-                    TeamManagement.prototype.prompt();
+                    TeamManagement.prototype.login(team_name,team_password);
                 }else{
                     TeamManagement.prototype.prompt();
                 }

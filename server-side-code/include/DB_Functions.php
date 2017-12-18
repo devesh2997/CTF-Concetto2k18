@@ -83,7 +83,7 @@
 
             if($result){
                 $response['success']=true;
-                $response['msg']="Password set. You have been logged in.";
+                $response['msg']="Password set. ";
             }else{
                 $response['success']=false;
                 $response['msg']="Some error occured in setting up your account!";
@@ -107,7 +107,7 @@
                     if ($encrypted_password == $hash) {
                         // user authentication details are correct
                         $result['success']=true;
-                        $result['msg']='Logged in.';
+                        $result['msg']='Logged in .';
                     }else{
                         $result['success']=false;
                         $result['msg']='Wrong password.';
@@ -123,6 +123,8 @@
             }
             return $result;
         }
+
+        
 
         public function addTeamMembers($team_name, $team_members){
             $stmt = "SELECT team_members from teams WHERE team_name='$team_name'";
