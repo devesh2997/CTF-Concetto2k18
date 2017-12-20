@@ -167,5 +167,51 @@
                 return false;
             }
         }
+
+        public function getNextQuestionId($team_name){
+            $stmt = "SELECT solved FROM teams WHERE team_name = '$team_name'";
+
+            if($stmt_run=mysqli_query($this->conn,$stmt)){
+                $row = mysqli_fetch_assoc($stmt_run);
+            
+                $id = $row['solved'] + 1;
+
+                $result['success'] = true;
+                $result['id'] = $id;
+            
+            }else{
+                $result['success'] = false;
+            }
+
+            return $result;
+
+        }
+
+        public function questionAnswered($team_name,$question_id){
+
+            $stmt = "SELECT solved FROM teams WHERE team_name = '$team_name'";
+
+            if($stmt_run=mysqli_query($this->conn,$stmt)){
+                $row = mysqli_fetch_assoc($stmt_run);
+            
+                $id = $row['solved'];
+
+                if($question_id == $id+1){
+                    $id = $id +1;
+                    $query = "UPDATE teams SET solved='$id' WHERE team_name ='$team_name'";
+
+                    if($query_run = mysqli_query($this->conn,$query)){
+                        return true;
+                    }else{
+                        return false;
+                    }
+                }
+
+            
+            }else{
+                return false;
+            }
+
+        }
     }
 ?>

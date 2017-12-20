@@ -1,0 +1,64 @@
+
+body {
+  overflow: hidden;
+  padding: 0;
+  margin: 0;
+  background: background-image: bgimage.jpg;
+}
+
+p, a {
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
+  font-family: Courier, monospace;
+  font-smoothing: antialiased;
+  margin: 0.8em 0;
+  font-size: 18px;
+  color: #B95;
+}
+
+.ghost,
+.glitch {
+  opacity: 0.25;
+}
+@font-face {
+    font-family: myFirstFont;
+    src: url(css/fonts/spc.ttf);
+}
+
+div {
+    font-family: myFirstFont;
+} 
+#message {
+  margin-left: -300px;
+  margin-top: -130px;
+  position: absolute;
+  height: 260px;
+  width: 600px;
+  left: 50%;
+  top: 50%;
+}
+
+#animate {
+  text-shadow: 0 0 8px rgba(209, 194, 165, 0.1);
+  position: absolute;
+  color: #4f4228;
+  bottom: 0;
+}
+
+#container {
+  background: -webkit-radial-gradient(50% 50%, ellipse, #20202D 0%, #101018 75%, #060612 100%);
+  background: -moz-radial-gradient(50% 50%, ellipse, #20202D 0%, #101018 75%, #060612 100%);
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+}
+#container:before {
+  pointer-events: none;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  content: "";
+  left: 0;
+  top: 0;
+  }

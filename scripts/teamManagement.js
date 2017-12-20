@@ -95,6 +95,8 @@ TeamManagement.prototype.processCommand = function(cmd){
     else if(cmd.indexOf('clear')>-1){
         terminal.clear();
         TeamManagement.prototype.prompt();
+    }else if(cmd=='let_the_hacking_begin'){
+        TeamManagement.prototype.goToQuestion();
     }
     else{
         msg = cmd+' is not recognized as an internal or and external command.';
@@ -149,6 +151,30 @@ TeamManagement.prototype.logout = function(){
     
 }
 
+TeamManagement.prototype.goToQuestion = function(){
+    if(TeamManagement.prototype.teamName == null){
+        terminal.print("You are not logged in ! Login to continue");
+        TeamManagement.prototype.prompt();
+    }else{
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function(){
+            if(this.readyState == 4 && this.status == 200){
+                var response = JSON.parse(this.responseText);
+                if(response.success){
+                    var id = response.id;
+                    var url = 'http://localhost/CTF-Concetto2k18/questions/'+id+'/question'+id+'.html';
+                    document.location=url;
+                }
+                
+            }else if(this.readyState == 4 && this.status != 200){
+            
+            }
+        }
+        xhttp.open("POST", "http://localhost/CTF-Concetto2k18/server-side-code/questions/getNextQuestionId.php", true);
+        xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        xhttp.send("team_name="+TeamManagement.prototype.teamName);
+    }
+}
 
 TeamManagement.prototype.checkNameAvailability= function(team_name) {
     terminal.print("Connecting...");
