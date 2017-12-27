@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<head lang="en">
+
+    <link rel="stylesheet" type="text/css" href="congratsStyle.css">
+
+    <script  src="QuestionHandler.js"></script>
+
+    <script> var questionHandler = new QuestionHandler(); questionHandler.init(); </script>
+
+  <script>
+      callCheck = function(){
+          checkFlag();
+      }
+  </script>
+
+</head>
+<body background="congrats.jpg">
+    <div id='congrats_text_container'>
+        <h1 id="congrats_text_heading">Congratulations!</h1>
+        <p id="prize_text">Here's your prize...</p>
+    </div>
+    <div id='cipher_container'>
+            <span id='cipher'>8bea96b772c5535be0b528df5aa394d9cbff8ddc83647283c05553c2665bc0d4</span>
+    </div>
+
+    <div class="input" >
+            <div class='flag_type'>
+                <span class='flag_text'>Flag : </span>
+                <input id="flaginput" class='flag_input' type="text">
+                <button id="flagcheck" class="flag_check" type="button" onclick="callCheck()" >Check</button>
+            </div>
+          </div>
+    
+</body>

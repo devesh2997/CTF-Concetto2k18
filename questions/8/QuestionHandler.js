@@ -57,7 +57,7 @@ function checkFlag(){
         }else if(this.readyState == 4 && this.status != 200){
         }
     }
-    xhttp.open("POST", "http://localhost/CTF-Concetto2k18/server-side-code/questions/question3Checker.php", true);
+    xhttp.open("POST", "http://localhost/CTF-Concetto2k18/server-side-code/questions/question8Checker.php", true);
     xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xhttp.send("team_name="+QuestionHandler.prototype.teamName+"&flag="+flag);
 }
@@ -72,7 +72,7 @@ function checkFlag(){
                 console.log('loged in');
                 if(response.success){
                     
-                    document.location = 'http://localhost/CTF-Concetto2k18/questions/4/question4.html';
+                    alert('done');
                 }else{
                 }
             }else{                
@@ -82,7 +82,7 @@ function checkFlag(){
         }else if(this.readyState == 4 && this.status != 200){
         }
     }
-    xhttp.open("POST", "http://localhost/CTF-Concetto2k18/server-side-code/questions/question3Checker.php", true);
+    xhttp.open("POST", "http://localhost/CTF-Concetto2k18/server-side-code/questions/question8Checker.php", true);
     xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xhttp.send("team_name="+QuestionHandler.prototype.teamName);
     }

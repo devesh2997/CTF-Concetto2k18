@@ -1,0 +1,65 @@
+body {
+    background-repeat:no-repeat;
+    background-size: cover;
+}
+
+#hint_text{
+}
+
+
+
+#cipher_container{
+    
+    color: darkgreen;
+    border-left: 6px solid darkgreen;
+    border-radius: 25px;
+    background-color: lightgrey;
+    font-family: 'Times New Roman', Times, 'sans serif';
+    font-size: 2em;
+    padding: 10px;
+    max-width: 40%;
+    position: fixed;
+    top: 30%;
+    right: 20%;
+
+}
+
+.input{
+    position: fixed;
+    bottom: 40%;
+    right: 5%;
+}
+.flag_type{
+    margin:15px;
+}
+.flag_text{
+    
+    font-family: 'Times New Roman', Times, 'sans serif';
+    font-size: 1.5em;
+    float: left;
+	width: 60px;
+    margin-right: 10px;
+    color:darkred;
+}
+.flag_input{
+    background: black;
+    font-size: 1.5em;
+    width:500px;
+    color: #61F5A1;    
+    border-width: 0px 0px 2px 0px;
+    border-color: darkred;
+}
+
+.flag_check{
+    font-size: 1em;
+    float: right;
+    margin-left: 10px;
+    color:white;
+    background-color: darkgreen;
+    border: none;
+    padding: 8px;
+}
+
+.flag_check:hover{
+    background-color:#61F5A1;
+}

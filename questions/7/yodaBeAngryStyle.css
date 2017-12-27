@@ -1,0 +1,37 @@
+body {
+    background-repeat:no-repeat;
+    background-size: cover;
+}
+
+#hint_text{
+}
+
+#cipher_link:link{
+    text-decoration: none;
+}
+
+#cipher_link:visited{
+    text-decoration: none;
+    color: darkgreen;
+}
+
+#cipher_link:hover{
+    text-decoration: none;
+    color: darkgreen;
+}
+
+#hint_container{
+    
+    color: darkgreen;
+    border-left: 6px solid darkgreen;
+    border-radius: 25px;
+    background-color: lightgrey;
+    font-family: 'Times New Roman', Times, 'sans serif';
+    font-size: 2em;
+    padding: 10px;
+    max-width: 40%;
+    position: fixed;
+    top: 30%;
+    left: 5%;
+
+}
