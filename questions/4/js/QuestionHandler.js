@@ -72,7 +72,7 @@ function checkFlag(){
                 console.log('loged in');
                 if(response.success){
                     
-                    document.location = 'http://localhost/CTF-Concetto2k18/questions/4/question5.html';
+                    document.location = 'http://localhost/CTF-Concetto2k18/questions/5/question5.html';
                 }else{
                 }
             }else{                

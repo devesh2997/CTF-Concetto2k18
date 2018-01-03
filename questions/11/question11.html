@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>Futuristic Resolving/Typing Text Effect feat. GLaDOS</title>
+
+  <script  src="js/QuestionHandler.js"></script>
+
+  <script> var questionHandler = new QuestionHandler(); questionHandler.init(); </script>
+
+  <script>
+      callCheck = function(){
+          checkFlag();
+      }
+  </script>
+  
+  
+  <link rel='stylesheet prefetch' href='https://fonts.googleapis.com/css?family=Unica+One'>
+
+      <link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/stylea.css">
+
+  <style>
+      /* NOTE: The styles were added inline because Prefixfree needs access to your styles and they must be inlined if they are on local disk! */
+      body {
+  overflow: hidden;
+  
+}
+
+#center {
+   width: 300px;
+   height: 300px;
+   position: absolute;
+   left: 85%;
+   top: 80%; 
+   margin-left: -150px;
+   margin-top: -150px;
+  transform: rotate(60deg);
+}
+
+#spaceship {
+  position: inherit;
+  left: 50%;
+  margin-left: -90px;
+  height: 180px;
+  width: 130px;
+  background: #fff;
+  border-radius: 100px 100px 20px 20px;
+}
+#window {
+  position: inherit;
+  margin-top: 35px;
+  margin-left: 35px;
+  height: 40px;
+  width: 40px;
+  background: #BE2E6B;
+  border-radius: 50%;
+  border: 10px solid #562449;
+  animation: window 3s infinite linear;
+}
+
+#tail {
+  top: 50%;
+  left: 50%;
+  margin-left: -106px;
+  margin-top: 40px;
+  position: inherit;
+  height: 0;
+  width: 120px;
+  border-bottom: 30px solid #E15050;
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  padding: 0 2px 0 0;
+}
+
+#left-wing {
+  top: 50%;
+  left: 50%;
+  margin-left: 48px;
+  margin-top: -60px;
+  position: inherit;
+  height: 0;
+  width: 20px;
+  border-bottom: 60px solid #E15050;
+  border-left: 0px solid transparent;
+  border-right: 30px solid transparent;
+  padding: 0 2px 0 0;
+  animation: from-to 3s infinite linear;
+}
+#right-wing {
+  top: 50%;
+  left: 50%;
+  margin-left: -150px;
+  margin-top: -60px;
+  position: inherit;
+  height: 0;
+  width: 20px;
+  border-bottom: 60px solid #E15050;
+  border-left: 30px solid transparent;
+  border-right: 0px solid transparent;
+  padding: 0 2px 0 0;
+  animation: to-from 3s infinite linear;
+}
+
+#exhaust {
+  left: 50%;
+  top: 50%; 
+  margin-left:  -62px;
+  margin-top: 40px;
+  position: inherit;
+  background:#131e55;
+  width: 70px;
+  height: 70px;
+  border-radius: 50px 10px 50px 50px;
+  transform: rotate(135deg);
+}
+
+#tail {
+  left: 50%;
+  top: 50%; 
+  margin-left:  -62px;
+  margin-top: 80px;
+  position: inherit;
+  width: 0px;
+  height: 0px;
+  border-style: solid;
+  border-width: 200px 34px 0 34px;
+  border-color: #E15050 transparent transparent transparent;
+  animation: burn .1s infinite linear;
+}
+
+
+@keyframes burn {
+	0% {border-width: 200px 34px 0 34px;}
+  25% {border-width: 100px 34px 0 34px;}
+  50% {border-width: 250px 34px 0 34px;}
+  75% {border-width: 150px 34px 0 34px;}
+	100% {border-width: 200px 34px 0 34px;}
+}
+
+@keyframes from-to {
+	0% {
+	  margin-left: 38px;
+	  width: 20px;
+	  border-bottom: 60px solid #BE2E6B;
+    border-left: 0px solid transparent;
+    border-right: 30px solid transparent;
+	}
+  50% {
+    margin-left: 48px;
+    width: 10px;
+    border-bottom: 60px solid #BE2E6B;
+    border-left: 0px solid transparent;
+    border-right: 15px solid transparent;
+  }
+  100% {
+    margin-left: 38px;
+	  width: 20px;
+	  border-bottom: 60px solid #BE2E6B;
+    border-left: 0px solid transparent;
+    border-right: 30px solid transparent;
+	}
+}
+
+@keyframes to-from {
+	0% {
+	  margin-left: -125px;
+	  width: 10px;
+	  border-bottom: 60px solid #BE2E6B;
+    border-left: 15px solid transparent;
+    border-right: 0px solid transparent;
+  }
+  50% {
+    margin-left: -140px;
+    width: 20px;
+    border-bottom: 60px solid #BE2E6B;
+    border-left: 30px solid transparent;
+    border-right: 0px solid transparent;
+  }
+  100% {
+	  margin-left: -125px;
+	  width: 10px;
+	  border-bottom: 60px solid #BE2E6B;
+    border-left: 15px solid transparent;
+    border-right: 0px solid transparent;
+  }
+}
+
+@keyframes window {
+	0% {
+	  margin-left: 25px;
+  }
+  50% {
+    margin-left: 45px;
+  }
+  100% {
+	  margin-left: 25px;
+  }
+}
+
+.input{
+    position: fixed;
+    bottom: 30%;
+    left: 10%;
+}
+.flag_type{
+    margin:15px;
+}
+.flag_text{
+    float: left;
+	width: 60px;
+    margin-right: 10px;
+    color:darkred;
+}
+.flag_input{
+    background: black;
+    width:500px;
+    color: #61F5A1;    
+    border-width: 0px 0px 2px 0px;
+    border-color: darkred;
+}
+
+.flag_check{
+    float: right;
+    margin-left: 10px;
+	width: 60px;
+    color:white;
+    background-color: darkgreen;
+    border: none;
+}
+
+.flag_check:hover{
+    background-color:#61F5A1;
+}
+
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+</head>
+
+<body background="abc.jpg">
+ 
+<div class="content" data-text="Question 11">Question 11</div>
+	<h1 class="heading" data-target-resolver></h1>
+
+  <div class="container">
+      <div class="input" >
+          <div class='flag_type'>
+              <span class='flag_text'>Flag : </span>
+              <input id="flaginput" class='flag_input' type="text">
+              <button id="flagcheck" class="flag_check" type="button" onclick="callCheck()" >Check</button>
+          </div>
+        </div>
+  
+</div>
+  
+  
+
+    <script  src="js/index.js"></script>
+
+
+ <div id='center'>
+  <div id='spaceship'>
+    <div id='window'></div>
+  </div>
+  <div id='tail'></div>
+  <div id='left-wing'></div>
+  <div id='right-wing'></div>
+  <div id='exhaust'></div>
+  <div id='tail'></div>
+</div>
+
+</body>
+
+</html>
