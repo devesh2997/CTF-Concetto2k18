@@ -20,7 +20,11 @@ TeamManagement.prototype.init = function(){
             response = JSON.parse(this.responseText);
             if(response.status){
                 team_name = response.team_name;
+                team_members = response.team_members;
+                team_contacts= response.team_contacts;
                 TeamManagement.prototype.teamName = team_name;
+                TeamManagement.prototype.teamMembers = team_members;
+                TeamManagement.prototype.teamContacts = team_contacts;
             }            
             TeamManagement.prototype.prompt();
         }else if(this.readyState == 4 && this.status != 200){
@@ -59,6 +63,21 @@ TeamManagement.prototype.processCommand = function(cmd){
         }        
     }else if(cmd.indexOf(cmdAddTeamMembers)>-1){
         members = cmd.slice(16);
+        if(TeamManagement.prototype.teamName == null){
+            terminal.print("Either login or create your team first!");
+            TeamManagement.prototype.prompt();
+        }else{
+            TeamManagement.prototype.addTeamMembers(TeamManagement.prototype.teamName,members);
+        }
+
+    }else if(cmd.indexOf(cmdAddContact)>-1){
+        contacts = cmd.slice(16);
+        if(TeamManagement.prototype.teamName == null){
+            terminal.print("Either login or create your team first!");
+            TeamManagement.prototype.prompt();
+        }else{
+            TeamManagement.prototype.addTeamMembers(TeamManagement.prototype.teamName,contacts);
+        }
 
     }else if(cmd.indexOf(cmdLogin)>-1){
         nameFlag = ' -t ';
@@ -88,6 +107,10 @@ TeamManagement.prototype.processCommand = function(cmd){
         terminal.print(msg);
         msg = '  ctf_add_contact <contact>     -> add one or more mobile numbers(should be separated by comma)'; 
         terminal.print(msg);
+        msg = '  login -t <team_name> -p <password>     -> login team with name and password'; 
+        terminal.print(msg);
+        msg = '  let_the_hacking_begin     -> begin competition'; 
+        terminal.print(msg);
         msg = '  clear                         ->clear screen';
         terminal.print(msg);
         TeamManagement.prototype.prompt();
@@ -114,7 +137,11 @@ TeamManagement.prototype.login = function(team_name, team_password){
             msg = response.msg;
             terminal.print(msg);
             if(response.success){
+                team_members = response.team_members;
+                team_contacts= response.team_contacts;
                 TeamManagement.prototype.teamName = team_name;
+                TeamManagement.prototype.teamMembers = team_members;
+                TeamManagement.prototype.teamContacts = team_contacts;
             }            
             TeamManagement.prototype.prompt();
         }else if(this.readyState == 4 && this.status != 200){
@@ -130,6 +157,13 @@ TeamManagement.prototype.login = function(team_name, team_password){
 TeamManagement.prototype.logout = function(){
     if(TeamManagement.prototype.teamName == null){
         terminal.print("no team logged in.");
+        TeamManagement.prototype.prompt();
+    }else if(TeamManagement.prototype.teamMembers == null){
+        terminal.print("Add team members first!");
+        TeamManagement.prototype.prompt();
+
+    }else if(TeamManagement.prototype.teamContacts == null){
+        terminal.print("Add team contacts first!");
         TeamManagement.prototype.prompt();
     }else{
         terminal.print("Logging out...");
@@ -243,4 +277,56 @@ TeamManagement.prototype.submitTeamPassword = function(team_name,team_password){
     xhttp.open("POST", "http://localhost/CTF-Concetto2k18/server-side-code/addTeam.php", true);
     xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xhttp.send("team_name="+team_name+"&team_password="+team_password);
+}
+
+TeamManagement.prototype.addTeamContacts = function(team_name,team_contacts){
+    terminal.print("Connecting...");
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            response = JSON.parse(this.responseText);
+            if(response.success){
+                terminal.print("Team contact added successfully");
+                TeamManagement.prototype.teamContacts = team_contacts;
+                TeamManagement.prototype.prompt();
+
+            }else{
+                terminal.print("Some error occurred in adding team contact.");
+                TeamManagement.prototype.prompt();
+            }
+        }else if(this.readyState == 4 && this.status != 200){
+            terminal.print("Some error ocurred in connection, try again.");
+            TeamManagement.prototype.prompt();
+        }
+    }
+    xhttp.open("POST", "http://localhost/CTF-Concetto2k18/server-side-code/addTeamContacts.php", true);
+    xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xhttp.send("team_name="+team_name+"&team_contacts="+team_contacts);
+
+}
+
+TeamManagement.prototype.addTeamMembers = function(team_name,team_members){
+    terminal.print("Connecting...");
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            response = JSON.parse(this.responseText);
+            if(response.success){
+                terminal.print("Team members added successfully");
+                TeamManagement.prototype.teamMembers = team_members;
+                TeamManagement.prototype.prompt();
+
+            }else{
+                terminal.print("Some error occurred in adding team members.");
+                TeamManagement.prototype.prompt();
+            }
+        }else if(this.readyState == 4 && this.status != 200){
+            terminal.print("Some error ocurred in connection, try again.");
+            TeamManagement.prototype.prompt();
+        }
+    }
+    xhttp.open("POST", "http://localhost/CTF-Concetto2k18/server-side-code/addTeamMembers.php", true);
+    xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xhttp.send("team_name="+team_name+"&team_members="+team_contacts);
+
 }

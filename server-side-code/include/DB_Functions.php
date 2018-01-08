@@ -107,6 +107,8 @@
                     if ($encrypted_password == $hash) {
                         // user authentication details are correct
                         $result['success']=true;
+                        $result['team_members']=$this->getTeamMembers($team_name);
+                        $result['team_contacts']=$this->getTeamContacts($team_name);
                         $result['msg']='Logged in .';
                     }else{
                         $result['success']=false;
@@ -205,6 +207,46 @@
                     }else{
                         return false;
                     }
+                }
+
+            
+            }else{
+                return false;
+            }
+
+        }
+
+        public function getTeamMembers($team_name){
+            $stmt = "SELECT team_members FROM teams WHERE team_name = '$team_name'";
+
+            if($stmt_run=mysqli_query($this->conn,$stmt)){
+                $row = mysqli_fetch_assoc($stmt_run);
+            
+                $team_members = $row['team_members'];
+                if($team_members == null){
+                    return false;
+                }else{
+                    return $team_members;
+                }
+
+            
+            }else{
+                return false;
+            }
+
+        }
+
+        public function getTeamContacts($team_name){
+            $stmt = "SELECT team_contact FROM teams WHERE team_name = '$team_name'";
+
+            if($stmt_run=mysqli_query($this->conn,$stmt)){
+                $row = mysqli_fetch_assoc($stmt_run);
+            
+                $team_contact = $row['team_contact'];
+                if($team_contact == null){
+                    return false;
+                }else{
+                    return $team_contact;
                 }
 
             

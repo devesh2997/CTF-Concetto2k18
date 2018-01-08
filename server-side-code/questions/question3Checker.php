@@ -1,7 +1,7 @@
 <?php 
 require_once '../include/DB_Functions.php';
 $db = new DB_Functions();
-    $corr_flag = 'onesand zer0s';
+    $corr_flag = 'onesand zer0es';
 
     session_start();
 
