@@ -16,6 +16,10 @@ QuestionHandler.prototype.init = function(){
             }else{                
                 console.log('loggged out');
                 document.location='http://localhost/CTF-Concetto2k18';
+                var currQuestion = response.current_question;
+                if(!(currQuestion >= 6) ){
+                    document.location = 'http://localhost/CTF-Concetto2k18/questions/'+currQuestion+'/question'+currQuestion+'.html';
+                }
             }
         }else if(this.readyState == 4 && this.status != 200){
         }

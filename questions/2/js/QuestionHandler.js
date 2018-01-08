@@ -13,6 +13,10 @@ QuestionHandler.prototype.init = function(){
             if(response.status){
                 console.log('loged in');
                 QuestionHandler.prototype.teamName = response.team_name;
+                var currQuestion = response.current_question;
+                if(!(currQuestion >= 2) ){
+                    document.location = 'http://localhost/CTF-Concetto2k18/questions/'+currQuestion+'/question'+currQuestion+'.html';
+                }
             }else{                
                 console.log('loggged out');
                 document.location='http://localhost/CTF-Concetto2k18';

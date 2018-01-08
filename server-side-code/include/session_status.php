@@ -21,6 +21,13 @@ if(isset($_SESSION['team_name']) && isset($_SESSION['id'])) {
     }else{
         $result['team_contacts'] = null;
     }
+    $current_question = $db->getNextQuestionId($_SESSION['team_name']);
+    if($current_question['success']){
+        $result['current_question'] = $current_question['id'];
+    }else{
+        $result['current_question'] = 1;
+    }
+   
     
     
 
