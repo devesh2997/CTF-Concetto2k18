@@ -9,18 +9,33 @@ $resultbliss=mysqli_query($link,$queryboard);
 <head>
   <meta charset="UTF-8">
   <title>DailyUI #019 - Leaderboard</title>
-  
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
 
   <link rel='stylesheet prefetch' href='https://fonts.googleapis.com/css?family=Open+Sans'>
 
       <link rel="stylesheet" href="css/style.css">
 
-  
+  <link rel="stylesheet" href="css/stylehead.css">
 </head>
 
 <body>
+<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
 
+<div class="content">
+  <div class="content__container">
+    <p class="content__container__text">
+      CONCETTO: 
+    </p>
+    
+    <ul class="content__container__list">
+      <li class="content__container__list__item">  Capture</li>
+      <li class="content__container__list__item">  The</li>
+      <li class="content__container__list__item">  Flag</li>
+      <li class="content__container__list__item">   #GameIsOn</li>
+    </ul>
+  </div>
+</div>
   <!--
 
 Follow me on
