@@ -32,7 +32,7 @@ TeamManagement.prototype.init = function(){
             TeamManagement.prototype.prompt();
         }
     }
-    xhttp.open("GET", "http://localhost/CTF-Concetto2k18/server-side-code/include/session_status.php", true);
+    xhttp.open("GET", server+"/server-side-code/include/session_status.php", true);
     xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xhttp.send();
 }
@@ -149,7 +149,7 @@ TeamManagement.prototype.login = function(team_name, team_password){
             TeamManagement.prototype.prompt();
         }
     }
-    xhttp.open("POST", "http://localhost/CTF-Concetto2k18/server-side-code/login.php", true);
+    xhttp.open("POST", server+"/server-side-code/login.php", true);
     xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xhttp.send("team_name="+team_name+"&team_password="+team_password);
 }
@@ -178,7 +178,7 @@ TeamManagement.prototype.logout = function(){
                 TeamManagement.prototype.prompt();
             }
         }
-        xhttp.open("GET", "http://localhost/CTF-Concetto2k18/server-side-code/logout.php", true);
+        xhttp.open("GET", server+"/server-side-code/logout.php", true);
         xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
         xhttp.send();
     }
@@ -196,7 +196,7 @@ TeamManagement.prototype.goToQuestion = function(){
                 var response = JSON.parse(this.responseText);
                 if(response.success){
                     var id = response.id;
-                    var url = 'http://localhost/CTF-Concetto2k18/questions/'+id+'/question'+id+'.html';
+                    var url = server+'questions/'+id+'/question'+id+'.html';
                     document.location=url;
                 }
                 
@@ -204,7 +204,7 @@ TeamManagement.prototype.goToQuestion = function(){
             
             }
         }
-        xhttp.open("POST", "http://localhost/CTF-Concetto2k18/server-side-code/questions/getNextQuestionId.php", true);
+        xhttp.open("POST", server+"/server-side-code/questions/getNextQuestionId.php", true);
         xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
         xhttp.send("team_name="+TeamManagement.prototype.teamName);
     }
@@ -230,7 +230,7 @@ TeamManagement.prototype.checkNameAvailability= function(team_name) {
             TeamManagement.prototype.prompt();
         }
     }
-    xhttp.open("POST", "http://localhost/CTF-Concetto2k18/server-side-code/isTeamNameAvailable.php", true);
+    xhttp.open("POST", server+"/server-side-code/isTeamNameAvailable.php", true);
     xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xhttp.send("team_name="+team_name);
 }
@@ -274,7 +274,7 @@ TeamManagement.prototype.submitTeamPassword = function(team_name,team_password){
             TeamManagement.prototype.prompt();
         }
     }
-    xhttp.open("POST", "http://localhost/CTF-Concetto2k18/server-side-code/addTeam.php", true);
+    xhttp.open("POST", server+"/server-side-code/addTeam.php", true);
     xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xhttp.send("team_name="+team_name+"&team_password="+team_password);
 }
@@ -299,7 +299,7 @@ TeamManagement.prototype.addTeamContacts = function(team_name,team_contacts){
             TeamManagement.prototype.prompt();
         }
     }
-    xhttp.open("POST", "http://localhost/CTF-Concetto2k18/server-side-code/addTeamContacts.php", true);
+    xhttp.open("POST", server+"/server-side-code/addTeamContacts.php", true);
     xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xhttp.send("team_name="+team_name+"&team_contacts="+team_contacts);
 
@@ -325,7 +325,7 @@ TeamManagement.prototype.addTeamMembers = function(team_name,team_members){
             TeamManagement.prototype.prompt();
         }
     }
-    xhttp.open("POST", "http://localhost/CTF-Concetto2k18/server-side-code/addTeamMembers.php", true);
+    xhttp.open("POST", server+"/server-side-code/addTeamMembers.php", true);
     xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xhttp.send("team_name="+team_name+"&team_members="+team_contacts);
 
