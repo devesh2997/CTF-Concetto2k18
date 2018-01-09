@@ -13,18 +13,18 @@ QuestionHandler.prototype.init = function(){
             if(response.status){
                 console.log('loged in');
                 QuestionHandler.prototype.teamName = response.team_name;
-            }else{                
-                console.log('loggged out');
-                document.location='http://localhost/CTF-Concetto2k18';
                 var currQuestion = response.current_question;
                 if(!(currQuestion >= 6) ){
-                    document.location = 'http://localhost/CTF-Concetto2k18/questions/'+currQuestion+'/question'+currQuestion+'.html';
+                    document.location = server+'questions/'+currQuestion+'/question'+currQuestion+'.html';
                 }
+            }else{                
+                console.log('loggged out');
+                document.location=server;
             }
         }else if(this.readyState == 4 && this.status != 200){
         }
     }
-    xhttp.open("GET", "http://localhost/CTF-Concetto2k18/server-side-code/include/session_status.php", true);
+    xhttp.open("GET", server+"server-side-code/include/session_status.php", true);
     xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xhttp.send();
 }
@@ -56,12 +56,12 @@ function checkFlag(){
                 }
             }else{                
                 console.log('loggged out');
-                document.location='http://localhost/CTF-Concetto2k18';
+                document.location=server;
             }
         }else if(this.readyState == 4 && this.status != 200){
         }
     }
-    xhttp.open("POST", "http://localhost/CTF-Concetto2k18/server-side-code/questions/question6Checker.php", true);
+    xhttp.open("POST",server+ "server-side-code/questions/question6Checker.php", true);
     xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xhttp.send("team_name="+QuestionHandler.prototype.teamName+"&flag="+flag);
 }
@@ -76,17 +76,17 @@ function checkFlag(){
                 console.log('loged in');
                 if(response.success){
                     
-                    alert('done');
+                    document.location = server+'questions/7/question7.html';
                 }else{
                 }
             }else{                
                 console.log('loggged out');
-                document.location='http://localhost/CTF-Concetto2k18';
+                document.location=server;
             }
         }else if(this.readyState == 4 && this.status != 200){
         }
     }
-    xhttp.open("POST", "http://localhost/CTF-Concetto2k18/server-side-code/questions/question6Checker.php", true);
+    xhttp.open("POST", server+"server-side-code/questions/question6Checker.php", true);
     xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xhttp.send("team_name="+QuestionHandler.prototype.teamName);
     }

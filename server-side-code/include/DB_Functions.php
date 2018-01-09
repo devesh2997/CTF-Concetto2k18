@@ -200,7 +200,8 @@
 
                 if($question_id == $id+1){
                     $id = $id +1;
-                    $query = "UPDATE teams SET solved='$id' WHERE team_name ='$team_name'";
+                    date_default_timezone_set('Asia/Kolkata');
+                    $query = "UPDATE teams SET solved='$id', time=NOW() WHERE team_name ='$team_name'";
 
                     if($query_run = mysqli_query($this->conn,$query)){
                         return true;
