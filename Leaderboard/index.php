@@ -8,7 +8,8 @@ $resultbliss=mysqli_query($link,$queryboard);
 
 <head>
   <meta charset="UTF-8">
-  <title>DailyUI #019 - Leaderboard</title>
+  <meta http-equiv="refresh" content="30" >
+  <title>CTF-Leaderboard</title>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
 

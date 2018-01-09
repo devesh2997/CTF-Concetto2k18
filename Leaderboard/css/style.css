@@ -271,11 +271,107 @@ Leaderboard
   border-top: none;
   border-bottom: 8px solid #993639;
 }
+.leaderboard ol li:nth-child(11) {
+  background: #c24448;
+  border-radius: 0 0 10px 10px;
+}
+.leaderboard ol li:nth-child(11)::after {
+  background: #c24448;
+  -webkit-box-shadow: 0 -2.5px 0 rgba(0, 0, 0, 0.12);
+          box-shadow: 0 -2.5px 0 rgba(0, 0, 0, 0.12);
+  border-radius: 0 0 10px 10px;
+}
+.leaderboard ol li:nth-child(11) mark::before, .leaderboard ol li:nth-child(9) mark::after {
+  top: -9px;
+  bottom: auto;
+  border-top: none;
+  border-bottom: 8px solid #993639;
+}
+
+
+
+.leaderboard ol li:nth-child(12) {
+  background: #c24448;
+  border-radius: 0 0 10px 10px;
+}
+.leaderboard ol li:nth-child(12)::after {
+  background: #c24448;
+  -webkit-box-shadow: 0 -2.5px 0 rgba(0, 0, 0, 0.12);
+          box-shadow: 0 -2.5px 0 rgba(0, 0, 0, 0.12);
+  border-radius: 0 0 10px 10px;
+}
+.leaderboard ol li:nth-child(12) mark::before, .leaderboard ol li:nth-child(9) mark::after {
+  top: -9px;
+  bottom: auto;
+  border-top: none;
+  border-bottom: 8px solid #993639;
+}
 
 
 
 
 
+
+.leaderboard ol li:nth-child(13) {
+  background: #c24448;
+  border-radius: 0 0 10px 10px;
+}
+.leaderboard ol li:nth-child(13)::after {
+  background: #c24448;
+  -webkit-box-shadow: 0 -2.5px 0 rgba(0, 0, 0, 0.12);
+          box-shadow: 0 -2.5px 0 rgba(0, 0, 0, 0.12);
+  border-radius: 0 0 10px 10px;
+}
+.leaderboard ol li:nth-child(13) mark::before, .leaderboard ol li:nth-child(9) mark::after {
+  top: -9px;
+  bottom: auto;
+  border-top: none;
+  border-bottom: 8px solid #993639;
+}
+
+
+
+
+
+
+
+.leaderboard ol li:nth-child(14) {
+  background: #c24448;
+  border-radius: 0 0 10px 10px;
+}
+.leaderboard ol li:nth-child(14)::after {
+  background: #c24448;
+  -webkit-box-shadow: 0 -2.5px 0 rgba(0, 0, 0, 0.12);
+          box-shadow: 0 -2.5px 0 rgba(0, 0, 0, 0.12);
+  border-radius: 0 0 10px 10px;
+}
+.leaderboard ol li:nth-child(14) mark::before, .leaderboard ol li:nth-child(9) mark::after {
+  top: -9px;
+  bottom: auto;
+  border-top: none;
+  border-bottom: 8px solid #993639;
+}
+
+
+
+
+
+.leaderboard ol li:nth-child(15) {
+  background: #c24448;
+  border-radius: 0 0 10px 10px;
+}
+.leaderboard ol li:nth-child(15)::after {
+  background: #c24448;
+  -webkit-box-shadow: 0 -2.5px 0 rgba(0, 0, 0, 0.12);
+          box-shadow: 0 -2.5px 0 rgba(0, 0, 0, 0.12);
+  border-radius: 0 0 10px 10px;
+}
+.leaderboard ol li:nth-child(15) mark::before, .leaderboard ol li:nth-child(9) mark::after {
+  top: -9px;
+  bottom: auto;
+  border-top: none;
+  border-bottom: 8px solid #993639;
+}
 .leaderboard ol li:hover {
   z-index: 2;
   overflow: visible;
