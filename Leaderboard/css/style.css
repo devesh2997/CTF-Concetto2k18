@@ -12,7 +12,7 @@ body {
   min-height: 450px;
   height: 100vh;
   margin: 0;
-  background: radial-gradient(ellipse farthest-corner at center top, #f39264 0%, #f2606f 100%);
+  background: radial-gradient(ellipse farthest-corner at center top, #000000 0%, #212121 100%);
   color: #fff;
   font-family: 'Open Sans', sans-serif;
 }
@@ -22,11 +22,11 @@ Leaderboard
 --------------------*/
 .leaderboard {
   position: absolute;
-  top: 20%;
-  left: 50%;
+  top: 25%;
+  left: 75%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
-  width: 285px;
+  width: 600px;
   height: 308px;
   background: -webkit-gradient(linear, left top, left bottom, from(#3a404d), to(#181c26));
   background: linear-gradient(to bottom, #3a404d, #181c26);
@@ -207,6 +207,22 @@ Leaderboard
   border-top: none;
   border-bottom: 8px solid #993639;
 }
+.leaderboard ol li:nth-child(10) {
+  background: #c24448;
+  border-radius: 0 0 10px 10px;
+}
+.leaderboard ol li:nth-child(10)::after {
+  background: #c24448;
+  -webkit-box-shadow: 0 -2.5px 0 rgba(0, 0, 0, 0.12);
+          box-shadow: 0 -2.5px 0 rgba(0, 0, 0, 0.12);
+  border-radius: 0 0 10px 10px;
+}
+.leaderboard ol li:nth-child(10) mark::before, .leaderboard ol li:nth-child(10) mark::after {
+  top: -9px;
+  bottom: auto;
+  border-top: none;
+  border-bottom: 8px solid #993639;
+}
 .leaderboard ol li:nth-child(7) {
   background: #c24448;
   border-radius: 0 0 10px 10px;
@@ -255,6 +271,9 @@ Leaderboard
   border-top: none;
   border-bottom: 8px solid #993639;
 }
+
+
+
 
 
 .leaderboard ol li:hover {

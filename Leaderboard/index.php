@@ -1,3 +1,8 @@
+<?php
+require_once('connect.php');
+$queryboard = "SELECT * FROM trialmenu";
+$resultbliss=mysqli_query($link,$queryboard);
+?>
 <!DOCTYPE html>
 <html lang="en" >
 
@@ -29,42 +34,20 @@ Codepen: https://codepen.io/supah/
     <svg class="ico-cup">
       <use xlink:href="#cup"></use>
     </svg>
-    Most active Players
+    Current Leaderboard
   </h1>
   <ol>
+  <?php
+  while ($row=mysqli_fetch_assoc($resultbliss)) {
+  ?>
     <li>
-      <mark>Jerry Wood</mark>
-      <small>315</small>
+      <mark><?php echo $row['item'];?></mark>
+      <small><?php echo $row['price'];?></small>
     </li>
-    <li>
-      <mark>Brandon Barnes</mark>
-      <small>301</small>
-    </li>
-    
-    <li>
-      <mark>Trevor McCormick</mark>
-      <small>245</small>
-    </li>
-    <li>
-      <mark>Andrew Fox</mark>
-      <small>203</small>
-    </li>
-	<li>
-      <mark>Andrew Fox</mark>
-      <small>203</small>
-    </li>
-	<li>
-      <mark>Andrew Fox</mark>
-      <small>203</small>
-    </li>
-	<li>
-      <mark>Andrew Fox</mark>
-      <small>203</small>
-    </li>
-	<li>
-      <mark>Andrew Fox</mark>
-      <small>203</small>
-    </li>
+    <?php 
+	}
+	?>
+
   </ol>
 </div>
 
