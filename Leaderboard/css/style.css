@@ -22,7 +22,7 @@ Leaderboard
 --------------------*/
 .leaderboard {
   position: absolute;
-  top: 50%;
+  top: 20%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
@@ -187,6 +187,76 @@ Leaderboard
   border-top: none;
   border-bottom: 8px solid #993639;
 }
+
+
+
+
+.leaderboard ol li:nth-child(6) {
+  background: #c24448;
+  border-radius: 0 0 10px 10px;
+}
+.leaderboard ol li:nth-child(6)::after {
+  background: #c24448;
+  -webkit-box-shadow: 0 -2.5px 0 rgba(0, 0, 0, 0.12);
+          box-shadow: 0 -2.5px 0 rgba(0, 0, 0, 0.12);
+  border-radius: 0 0 10px 10px;
+}
+.leaderboard ol li:nth-child(6) mark::before, .leaderboard ol li:nth-child(6) mark::after {
+  top: -9px;
+  bottom: auto;
+  border-top: none;
+  border-bottom: 8px solid #993639;
+}
+.leaderboard ol li:nth-child(7) {
+  background: #c24448;
+  border-radius: 0 0 10px 10px;
+}
+.leaderboard ol li:nth-child(7)::after {
+  background: #c24448;
+  -webkit-box-shadow: 0 -2.5px 0 rgba(0, 0, 0, 0.12);
+          box-shadow: 0 -2.5px 0 rgba(0, 0, 0, 0.12);
+  border-radius: 0 0 10px 10px;
+}
+.leaderboard ol li:nth-child(7) mark::before, .leaderboard ol li:nth-child(7) mark::after {
+  top: -9px;
+  bottom: auto;
+  border-top: none;
+  border-bottom: 8px solid #993639;
+}
+.leaderboard ol li:nth-child(8) {
+  background: #c24448;
+  border-radius: 0 0 10px 10px;
+}
+.leaderboard ol li:nth-child(8)::after {
+  background: #c24448;
+  -webkit-box-shadow: 0 -2.5px 0 rgba(0, 0, 0, 0.12);
+          box-shadow: 0 -2.5px 0 rgba(0, 0, 0, 0.12);
+  border-radius: 0 0 10px 10px;
+}
+.leaderboard ol li:nth-child(8) mark::before, .leaderboard ol li:nth-child(8) mark::after {
+  top: -9px;
+  bottom: auto;
+  border-top: none;
+  border-bottom: 8px solid #993639;
+}
+.leaderboard ol li:nth-child(9) {
+  background: #c24448;
+  border-radius: 0 0 10px 10px;
+}
+.leaderboard ol li:nth-child(9)::after {
+  background: #c24448;
+  -webkit-box-shadow: 0 -2.5px 0 rgba(0, 0, 0, 0.12);
+          box-shadow: 0 -2.5px 0 rgba(0, 0, 0, 0.12);
+  border-radius: 0 0 10px 10px;
+}
+.leaderboard ol li:nth-child(9) mark::before, .leaderboard ol li:nth-child(9) mark::after {
+  top: -9px;
+  bottom: auto;
+  border-top: none;
+  border-bottom: 8px solid #993639;
+}
+
+
 .leaderboard ol li:hover {
   z-index: 2;
   overflow: visible;
