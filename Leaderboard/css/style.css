@@ -12,7 +12,7 @@ body {
   min-height: 450px;
   height: 100vh;
   margin: 0;
-  background: radial-gradient(ellipse farthest-corner at center top, #000000 0%, #212121 100%);
+  background: radial-gradient(ellipse farthest-corner at center top, #f39264 0%, #f2606f 100%);
   color: #fff;
   font-family: 'Open Sans', sans-serif;
 }
@@ -22,11 +22,12 @@ Leaderboard
 --------------------*/
 .leaderboard {
   position: absolute;
-  height:100% !important;
+  top: 20%;
   left: 75%;
-  -webkit-transform: translate(-50%, -25%);
-          transform: translate(-50%, -25%);
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
   width: 600px;
+  height: 308px;
   background: -webkit-gradient(linear, left top, left bottom, from(#3a404d), to(#181c26));
   background: linear-gradient(to bottom, #3a404d, #181c26);
   border-radius: 10px;
@@ -186,6 +187,8 @@ Leaderboard
   border-top: none;
   border-bottom: 8px solid #993639;
 }
+
+
 
 
 
@@ -371,6 +374,9 @@ Leaderboard
   border-top: none;
   border-bottom: 8px solid #993639;
 }
+
+
+
 .leaderboard ol li:hover {
   z-index: 2;
   overflow: visible;
