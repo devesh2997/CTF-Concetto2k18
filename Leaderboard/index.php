@@ -1,14 +1,8 @@
-<?php
-require_once('connect.php');
-$queryboard = "SELECT * FROM trialmenu";
-$resultbliss=mysqli_query($link,$queryboard);
-?>
 <!DOCTYPE html>
 <html lang="en" >
 
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="refresh" content="30" >
   <title>CTF-Leaderboard</title>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
@@ -52,21 +46,26 @@ Codepen: https://codepen.io/supah/
     </svg>
     Current Leaderboard
   </h1>
-  <ol>
-  <?php
-  while ($row=mysqli_fetch_assoc($resultbliss)) {
-  ?>
-    <li>
-      <mark><?php echo $row['item'];?></mark>
-      <small><?php echo $row['price'];?></small>
-    </li>
-    <?php 
-	}
-	?>
-
-  </ol>
+ 
+<script>
+function update(){
+  let xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+       document.getElementById("demo").innerHTML = xhttp.responseText;
+    }
+};
+xhttp.open("GET", "./leaderboard.php", true);
+xhttp.send();
+}
+setInterval(update,50);
+</script>  
+<ol id="demo">
+</ol>
 </div>
-
+<script>
+  
+</script>
 
 <svg style="display: none;">
   <symbol id="cup" x="0px" y="0px"

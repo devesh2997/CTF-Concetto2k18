@@ -21,8 +21,8 @@ body {
 .content__container {
   font-weight: 600;
   overflow: hidden;
-  height: 40px;
-  padding: 0 40px;
+  height: 50px;
+  padding: 0 30px;
 }
 .content__container:before {
   content: '[';
