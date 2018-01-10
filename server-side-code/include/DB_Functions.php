@@ -208,6 +208,8 @@
                     }else{
                         return false;
                     }
+                }else if($question_id<=$id){
+                    return true;
                 }
 
             

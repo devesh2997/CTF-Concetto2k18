@@ -1,41 +1,14 @@
-<!DOCTYPE html>
-<html lang="en" >
-
-<head>
-  <meta charset="UTF-8">
-  <title>Question 4+7 @ CTF</title>
-
-  <script src="../config.js"></script>
-
-  <script  src="js/QuestionHandler.js"></script>
-
-  <script> var questionHandler = new QuestionHandler(); questionHandler.init(); </script>
-
-  <script>
-      callCheck = function(){
-          checkFlag();
-      }
-  </script>
-  
-  
-  <link rel='stylesheet prefetch' href='https://fonts.googleapis.com/css?family=Unica+One'>
-
-      <link rel="stylesheet" href="css/style.css">
-<link rel="stylesheet" href="css/stylea.css">
-
-  <style>
-      /* NOTE: The styles were added inline because Prefixfree needs access to your styles and they must be inlined if they are on local disk! */
-      body {
+body {
   overflow: hidden;
-  
+  background: #562449;
 }
 
 #center {
    width: 300px;
    height: 300px;
    position: absolute;
-   left: 85%;
-   top: 80%; 
+   left: 50%;
+   top: 50%; 
    margin-left: -150px;
    margin-top: -150px;
   transform: rotate(60deg);
@@ -47,7 +20,7 @@
   margin-left: -90px;
   height: 180px;
   width: 130px;
-  background: #fff;
+  background: #BE2E6B;
   border-radius: 100px 100px 20px 20px;
 }
 #window {
@@ -70,7 +43,7 @@
   position: inherit;
   height: 0;
   width: 120px;
-  border-bottom: 30px solid #E15050;
+  border-bottom: 30px solid #BE2E6B;
   border-left: 20px solid transparent;
   border-right: 20px solid transparent;
   padding: 0 2px 0 0;
@@ -84,7 +57,7 @@
   position: inherit;
   height: 0;
   width: 20px;
-  border-bottom: 60px solid #E15050;
+  border-bottom: 60px solid #BE2E6B;
   border-left: 0px solid transparent;
   border-right: 30px solid transparent;
   padding: 0 2px 0 0;
@@ -98,7 +71,7 @@
   position: inherit;
   height: 0;
   width: 20px;
-  border-bottom: 60px solid #E15050;
+  border-bottom: 60px solid #BE2E6B;
   border-left: 30px solid transparent;
   border-right: 0px solid transparent;
   padding: 0 2px 0 0;
@@ -111,7 +84,7 @@
   margin-left:  -62px;
   margin-top: 40px;
   position: inherit;
-  background:#131e55;
+  background:#BE2E6B;
   width: 70px;
   height: 70px;
   border-radius: 50px 10px 50px 50px;
@@ -128,7 +101,7 @@
   height: 0px;
   border-style: solid;
   border-width: 200px 34px 0 34px;
-  border-color: #E15050 transparent transparent transparent;
+  border-color: #BE2E6B transparent transparent transparent;
   animation: burn .1s infinite linear;
 }
 
@@ -200,78 +173,3 @@
 	  margin-left: 25px;
   }
 }
-
-.input{
-    position: fixed;
-    bottom: 30%;
-    left: 10%;
-}
-.flag_type{
-    margin:15px;
-}
-.flag_text{
-    float: left;
-	width: 60px;
-    margin-right: 10px;
-    color:darkred;
-}
-.flag_input{
-    background: black;
-    width:500px;
-    color: #61F5A1;    
-    border-width: 0px 0px 2px 0px;
-    border-color: darkred;
-}
-
-.flag_check{
-    float: right;
-    margin-left: 10px;
-	width: 60px;
-    color:white;
-    background-color: darkgreen;
-    border: none;
-}
-
-.flag_check:hover{
-    background-color:#61F5A1;
-}
-
-    </style>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
-</head>
-
-<body background="abc.jpg">
- 
-<div class="content" data-text="Question 4+7">Question 4+7</div>
-	<h1 class="heading" data-target-resolver></h1>
-
-  <div class="container">
-      <div class="input" >
-          <div class='flag_type'>
-              <span class='flag_text'>Flag : </span>
-              <input id="flaginput" class='flag_input' type="text">
-              <button id="flagcheck" class="flag_check" type="button" onclick="callCheck()" >Check</button>
-          </div>
-        </div>
-  
-</div>
-  
-  
-
-    <script  src="js/index.js"></script>
-
-
- <div id='center'>
-  <div id='spaceship'>
-    <div id='window'></div>
-  </div>
-  <div id='tail'></div>
-  <div id='left-wing'></div>
-  <div id='right-wing'></div>
-  <div id='exhaust'></div>
-  <div id='tail'></div>
-</div>
-
-</body>
-
-</html>

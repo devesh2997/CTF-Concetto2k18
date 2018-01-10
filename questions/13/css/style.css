@@ -1,0 +1,26 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+ 
+  font-family: 'Unica One', sans-serif;
+
+}
+
+.container {
+  display: flex;
+  align-items: left;
+  justify-content: left;
+  height: 100%;
+  padding: 0rem;
+}
+
+.heading {
+  color: #eee;
+  font-size: 2rem;
+  font-weight: 300;
+  text-transform: uppercase;
+}

@@ -14,12 +14,12 @@ QuestionHandler.prototype.init = function(){
                 console.log('loged in');
                 QuestionHandler.prototype.teamName = response.team_name;
                 var currQuestion = response.current_question;
-                if(!(currQuestion >= 7) ){
+                if(!(currQuestion >= 15) ){
                     document.location = server+'questions/'+currQuestion+'/question'+currQuestion+'.html';
                 }
-            }else{ 
-                document.location=server;               
+            }else{                
                 console.log('loggged out');
+                document.location=server;
             }
         }else if(this.readyState == 4 && this.status != 200){
         }
@@ -61,7 +61,7 @@ function checkFlag(){
         }else if(this.readyState == 4 && this.status != 200){
         }
     }
-    xhttp.open("POST", server+"server-side-code/questions/question7Checker.php", true);
+    xhttp.open("POST", server+"server-side-code/questions/question15Checker.php", true);
     xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xhttp.send("team_name="+QuestionHandler.prototype.teamName+"&flag="+flag);
 }
@@ -76,7 +76,7 @@ function checkFlag(){
                 console.log('loged in');
                 if(response.success){
                     
-                    document.location = server+'questions/8/question8.html';
+                    alert('done');
                 }else{
                 }
             }else{                
@@ -86,7 +86,7 @@ function checkFlag(){
         }else if(this.readyState == 4 && this.status != 200){
         }
     }
-    xhttp.open("POST", server+"server-side-code/questions/question7Checker.php", true);
+    xhttp.open("POST", server+"server-side-code/questions/question15Checker.php", true);
     xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xhttp.send("team_name="+QuestionHandler.prototype.teamName);
     }

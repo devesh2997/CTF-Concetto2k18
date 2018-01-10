@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+        <title>Question 10 @ CTF</title>
+        <link rel="stylesheet" type="text/css" href="question10Style.css">
+        <script src="../config.js"></script>
+    
+        <script  src="QuestionHandler.js"></script>
+    
+        <script> var questionHandler = new QuestionHandler(); questionHandler.init(); </script>
+    
+      <script>
+          callCheck = function(){
+              checkFlag();
+          }
+      </script>
+
+</head>
+    
+
+<body>
+
+        <div id='question_container'>
+                <p id='question_text'>X has been very bored with his job as an industrial couponer lately, and so he has decided to spend his time flipping coins. The results of his coin flips are in this file, with each bit representing the outcome of one bit. Keith now wants to know how many runs of flips he found. A run is any consecutive sequence of the same flip. For example, the flips 001111101011 have three runs of length one, two runs of length two, and one run of length five. Can you help Keith count runs? The flag is the number of runs or length one, the number of runs of length two, the number of runs of length three, etc. up to the longest run in the sequence, each separated by a comma and space.
+                    </p>
+                <p id='byte_sequence'>10100100010111101100110100000110010010110111001000100001011110111000100011011100110010001101000000110101000110111101100010111001100100010100000100010100100101100011000000010010101100010011011000110110000010011100111011011000011010011010110111101000000011011001011110101010011110011000000011111010110011010111010100010111000001011110001100011100110110010001000110111111000110101010110110100001001001001010001101100001011001010100110001010100010100100100001011001110000111110101000100110111110100110000000110011011010011011000101110011001000000100111101011001101111010111101000110111010110000001011001000111101000101000000110000100001100011001111011111000000011111100100000010100011010011100001111011100111110111110000001100101101001111101110110001010000000000001111001110010000101010100111000000010001</p>
+        </div>
+    
+        <div class="input" >
+                <div class='flag_type'>
+                    <span class='flag_text'>Flag : </span>
+                    <input id="flaginput" class='flag_input' type="text">
+                    <button id="flagcheck" class="flag_check" type="button" onclick="callCheck()" >Check</button>
+                </div>
+              </div>
+
+</body>
