@@ -24,6 +24,12 @@
 <link rel="stylesheet" href="css/stylea.css">
 
   <style>
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+outline: none;
+}
       /* NOTE: The styles were added inline because Prefixfree needs access to your styles and they must be inlined if they are on local disk! */
       body {
   overflow: hidden;
@@ -211,16 +217,16 @@
 }
 .flag_text{
     float: left;
-	width: 60px;
+	  width: 60px;
     margin-right: 10px;
-    color:darkred;
+    color: #00ff00;
 }
 .flag_input{
-    background: black;
+    background: transparent;
     width:500px;
-    color: #61F5A1;    
-    border-width: 0px 0px 2px 0px;
-    border-color: darkred;
+    color: #00ff00;    
+    border-width: 0px 0px 0px 0px;
+    border-color: transparent;
 }
 
 .flag_check{
@@ -228,7 +234,7 @@
     margin-left: 10px;
 	width: 60px;
     color:white;
-    background-color: darkgreen;
+    background-color: transparent;
     border: none;
 }
 
@@ -248,9 +254,9 @@
   <div class="container">
       <div class="input" >
           <div class='flag_type'>
-              <span class='flag_text'>Flag : </span>
-              <input id="flaginput" class='flag_input' type="text">
-              <button id="flagcheck" class="flag_check" type="button" onclick="callCheck()" >Check</button>
+              <span class='flag_text'>flag:~$> </span>
+              <input id="flaginput" class='flag_input' type="text" autofocus onkeydown="if(event.keyCode==13) callCheck();" tabindex="0">
+              <button id="flagcheck" class="flag_check" type="button" onclick="callCheck()" ></button>
           </div>
         </div>
   
@@ -259,7 +265,11 @@
   
 
     <script  src="js/index.js"></script>
-
+    <script>
+        window.addEventListener('click',()=>{
+          document.querySelector("#flaginput").focus();
+        });
+      </script>
 
  <div id='center'>
   <div id='spaceship'>

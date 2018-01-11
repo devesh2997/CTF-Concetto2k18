@@ -94,7 +94,7 @@ var fx = new TextScramble(el);
 var counter = 0;
 var next = function next() {
   fx.setText(phrases[counter]).then(function () {
-    setTimeout(next, 800);
+    setTimeout(next, 3000);
   });
   counter = (counter + 1) % phrases.length;
 };

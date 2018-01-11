@@ -182,7 +182,7 @@ p, a {
     margin-left: 10px;
 	width: 60px;
     color:white;
-    background-color: darkgreen;
+    background-color: transparent;
     border: none;
 }
 input:focus,
@@ -332,9 +332,9 @@ button:focus {
   </div>
   <div class="input" >
       <div class='flag_type'>
-          <span class='flag_text'>Flag : </span>
+          <span class='flag_text'>flag:~$></span>
           <input id="flaginput" class='flag_input' type="text" onkeydown="if(event.keyCode == 13) callCheck();" tabindex="0" autofocus>
-          <button id="flagcheck" class="flag_check" type="button" onclick="callCheck()" >Check</button>
+          <button id="flagcheck" class="flag_check" type="button" onclick="callCheck()" ></button>
       </div>
     </div>
 </div>

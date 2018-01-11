@@ -14,8 +14,13 @@
       callCheck = function(){
           checkFlag();
       }
+      
   </script>
-
+<script>
+        window.addEventListener('click',()=>{
+          document.querySelector("#flaginput").focus();
+        });
+      </script>
 </head>
 <body background="yodaquote.jpg">
     <div id='cipher_container'>
@@ -24,9 +29,9 @@
 
     <div class="input" >
             <div class='flag_type'>
-                <span class='flag_text'>Flag : </span>
-                <input id="flaginput" class='flag_input' type="text">
-                <button id="flagcheck" class="flag_check" type="button" onclick="callCheck()" >Check</button>
+                <span class='flag_text'>flag:~$></span>
+                <input id="flaginput" class='flag_input' type="text" autofocus tabindex="0" onkeydown="if(event.keyCode==13) callCheck()">
+                <button id="flagcheck" class="flag_check" type="button" onclick="callCheck()" ></button>
             </div>
           </div>
     

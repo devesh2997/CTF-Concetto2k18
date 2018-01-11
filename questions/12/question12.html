@@ -24,6 +24,12 @@
   
   
       <style>
+          input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+outline: none;
+}
       /* NOTE: The styles were added inline because Prefixfree needs access to your styles and they must be inlined if they are on local disk! */
       @import 'https://fonts.googleapis.com/css?family=Roboto+Mono:100';
 html,
@@ -60,12 +66,13 @@ body {
     float: left;
 	width: 60px;
     margin-right: 10px;
-    color:darkred;
+    color:#00ff00;
 }
 .flag_input{
-    background: #212121;
+    background: transparent;
     width:500px;
-    color: #61F5A1;    
+    color: #61F5A1;
+    border: none;    
     
 	
 }
@@ -80,13 +87,11 @@ button:focus {
     margin-left: 10px;
 	width: 60px;
     color:white;
-    background-color: darkgreen;
+    background-color: transparent;
     border: none;
 }
 
-.flag_check:hover{
-    background-color:#61F5A1;
-}
+
 
     </style>
 
@@ -101,9 +106,9 @@ button:focus {
 <div style="margin-left: -500px; margin-top: 100px;"><div class="container">
     <div class="input" >
         <div class='flag_type'>
-            <span class='flag_text'>F</span>
+            <span class='flag_text'>flag:~$> </span>
             <input id="flaginput" class='flag_input' type="text" onKeyDown="if(event.keyCode==13) callCheck();" tabindex="0" autofocus>
-            <button id="flagcheck" class="flag_check" type="button" onclick="callCheck()" >Check</button>
+            <button id="flagcheck" class="flag_check" type="button" onclick="callCheck()" ></button>
         </div>
       </div>
   <div class="text"></div></div>
@@ -167,6 +172,11 @@ button:focus {
 
 
     <script  src="js/index.js"></script>
+    <script>
+            window.addEventListener('click',()=>{
+              document.querySelector("#flaginput").focus();
+            });
+          </script>
 
 <script  src="js/index_arcr.js"></script>
 

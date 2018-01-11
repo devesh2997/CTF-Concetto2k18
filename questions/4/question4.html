@@ -23,6 +23,12 @@
 
   
       <style>
+          input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}
 
       body {
         background-repeat:no-repeat;
@@ -168,10 +174,10 @@ p, a {
     color:darkred;
 }
 .flag_input{
-    background: black;
+    background: transparent;
     width:500px;
-    color: #61F5A1;    
-    border-width: 0px 0px 2px 0px;
+    color: darkred;    
+    border-width: 0px 0px 0px 0px;
     border-color: darkred;
 }
 
@@ -180,7 +186,7 @@ p, a {
     margin-left: 10px;
 	width: 60px;
     color:white;
-    background-color: darkgreen;
+    background-color: transparent;
     border: none;
 }
 
@@ -325,9 +331,9 @@ p, a {
   </div>
   <div class="input" >
       <div class='flag_type'>
-          <span class='flag_text'>Flag : </span>
-          <input id="flaginput" class='flag_input' type="text">
-          <button id="flagcheck" class="flag_check" type="button" onclick="callCheck()" >Check</button>
+          <span class='flag_text'>flag:~$></span>
+          <input id="flaginput" class='flag_input' type="text" tabindex="0" autofocus onkeydown="if(event.keyCode==13) callCheck();">
+          <button id="flagcheck" class="flag_check" type="button" onclick="callCheck()" ></button>
       </div>
     </div>
 </div>
@@ -336,6 +342,11 @@ p, a {
 
   <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
     <script  src="js/index.js"></script>
+    <script>
+            window.addEventListener('click',()=>{
+              document.querySelector("#flaginput").focus();
+            });
+          </script>
 
 </body>
 </html>
