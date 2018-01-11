@@ -92,7 +92,7 @@ var options = {
 
     var nextOptions = Object.assign({}, options, { resolveString: strings[counter] });
     resolver.resolve(nextOptions, callback);
-  }, 1000);
+  }, 3000);
 }
 
 resolver.resolve(options, callback);
