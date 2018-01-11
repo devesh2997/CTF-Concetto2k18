@@ -157,6 +157,8 @@ p, a {
     position: fixed;
     bottom: 30%;
     left: 10%;
+
+    border: none;
 }
 .flag_type{
     margin:15px;
@@ -168,10 +170,10 @@ p, a {
     color:#61F5A1;
 }
 .flag_input{
-    background: black;
+    background: transparent;
     width:500px;
     color: #61F5A1;    
-    border-width: 0px 0px 2px 0px;
+    border-width: 0px 0px 0px 0px;
     border-color: #61F5A1;
 }
 
@@ -183,7 +185,12 @@ p, a {
     background-color: darkgreen;
     border: none;
 }
-
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}
 .flag_check:hover{
     background-color:#61F5A1;
 }
@@ -326,7 +333,7 @@ p, a {
   <div class="input" >
       <div class='flag_type'>
           <span class='flag_text'>Flag : </span>
-          <input id="flaginput" class='flag_input' type="text">
+          <input id="flaginput" class='flag_input' type="text" onkeydown="if(event.keyCode == 13) callCheck();" tabindex="0" autofocus>
           <button id="flagcheck" class="flag_check" type="button" onclick="callCheck()" >Check</button>
       </div>
     </div>
@@ -336,6 +343,11 @@ p, a {
 
   <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
     <script  src="js/index.js"></script>
+    <script>
+    window.addEventListener('click',()=>{
+      document.querySelector("#flaginput").focus();
+    });
+  </script>
 
 </body>
 </html>

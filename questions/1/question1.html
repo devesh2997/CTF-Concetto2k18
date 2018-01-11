@@ -14,7 +14,8 @@
 
   <script>
       callCheck = function(flag_type){
-          checkFlag(flag_type);
+          //checkFlag(flag_type);
+          console.log("Aloo");
       }
   </script>
 
@@ -27,7 +28,12 @@
       body {
 
 }
-
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}
 .Iam {
   padding: 2em 5em;
   font: normal 40px/50px Montserrat, sans-serif;
@@ -154,6 +160,9 @@ p, a {
     position: fixed;
     bottom: 2%;
     left: 10%;
+    background: transparent;
+    border: none;
+
 }
 .flag_type{
     margin:15px;
@@ -168,7 +177,7 @@ p, a {
     background: black;
     width:500px;
     color: #61F5A1;    
-    border-width: 0px 0px 2px 0px;
+    border-width: 0px 0px 0px 0px;
     border-color: #61F5A1;
 }
 
@@ -324,7 +333,7 @@ p, a {
       <div class='flag_type'>
           <span class='flag_text'>base64</span>
           <input id="base64input" class='flag_input' type="text">
-          <button id="base64check" class="flag_check" type="button" onclick="callCheck('base64')" >Check</button>
+          <button id="base64check" class="flag_check" type="button"  onclick="callCheck('base64')">Check</button>
       </div>
       <div class='flag_type'>
             <span class='flag_text'>sha256</span>
