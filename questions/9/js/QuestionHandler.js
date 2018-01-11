@@ -75,9 +75,9 @@ function checkFlag(){
             if(response.session_status){
                 console.log('loged in');
                 if(response.success){
-                    alert('done');
+                   // alert('done');
                     
-                   // document.location=server+'questions/10/question10.html';
+                    document.location=server+'questions/10/question10.html';
                 }else{
                 }
             }else{                

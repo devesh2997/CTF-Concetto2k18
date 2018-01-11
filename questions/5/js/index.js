@@ -5,28 +5,25 @@
 
   MESSAGES.push({
     delay: 0,
-    text: "I don't go Dates. "
+    text: "Look beyond the obvious... "
   });
 
   MESSAGES.push({
     delay: 1200,
-    text: "I don't go clubbing. "
+    text: "It will be the source of your enlightenment... "
   });
 
   MESSAGES.push({
     delay: 2200,
-    text: "I don't cAre about cElebrity hookups ..."
+    text: "Talk is cheap ..."
   });
 
   MESSAGES.push({
     delay: 3600,
-    text: "or which sports teaMs just wOn. "
+    text: "Show me the ____ "
   });
 
-  MESSAGES.push({
-    delay: 5200,
-    text: "My universe exists eNtirely within computerS."
-  });
+  
 
   $container = $("#container");
 

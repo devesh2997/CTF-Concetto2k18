@@ -76,7 +76,7 @@ TeamManagement.prototype.processCommand = function(cmd){
             terminal.print("Either login or create your team first!");
             TeamManagement.prototype.prompt();
         }else{
-            TeamManagement.prototype.addTeamMembers(TeamManagement.prototype.teamName,contacts);
+            TeamManagement.prototype.addTeamContacts(TeamManagement.prototype.teamName,contacts);
         }
 
     }else if(cmd.indexOf(cmdLogin)>-1){
@@ -142,6 +142,16 @@ TeamManagement.prototype.login = function(team_name, team_password){
                 TeamManagement.prototype.teamName = team_name;
                 TeamManagement.prototype.teamMembers = team_members;
                 TeamManagement.prototype.teamContacts = team_contacts;
+            }
+            if(TeamManagement.prototype.teamMembers==null){
+                terminal.print("Add team members ...");
+                terminal.print("command : ctf_add_members <members> -> member names should be separated by comma ");
+            }else if(TeamManagement.prototype.teamContacts==null){
+                terminal.print("Add team contacts ...");
+                terminal.print("command : ctf_add_contact <contact> -> add one or more mobile numbers(should be separated by comma)")
+            }else{
+                terminal.print("You are all set...Get to hacking!");
+                terminal.print("command : let_the_hacking_begin");
             }            
             TeamManagement.prototype.prompt();
         }else if(this.readyState == 4 && this.status != 200){
@@ -157,13 +167,6 @@ TeamManagement.prototype.login = function(team_name, team_password){
 TeamManagement.prototype.logout = function(){
     if(TeamManagement.prototype.teamName == null){
         terminal.print("no team logged in.");
-        TeamManagement.prototype.prompt();
-    }else if(TeamManagement.prototype.teamMembers == null){
-        terminal.print("Add team members first!");
-        TeamManagement.prototype.prompt();
-
-    }else if(TeamManagement.prototype.teamContacts == null){
-        terminal.print("Add team contacts first!");
         TeamManagement.prototype.prompt();
     }else{
         terminal.print("Logging out...");
@@ -187,7 +190,16 @@ TeamManagement.prototype.logout = function(){
 
 TeamManagement.prototype.goToQuestion = function(){
     if(TeamManagement.prototype.teamName == null){
+        console.log("not logged in");
         terminal.print("You are not logged in ! Login to continue");
+        TeamManagement.prototype.prompt();
+    }else if(TeamManagement.prototype.teamMembers == null){
+        console.log("team name not added");
+        terminal.print("Add team members to continue.");
+        TeamManagement.prototype.prompt();
+    }else if(TeamManagement.prototype.teamContacts == null){
+        console.log("team contact not added");
+        terminal.print("Add team contact to begin.");
         TeamManagement.prototype.prompt();
     }else{
         var xhttp = new XMLHttpRequest();
@@ -288,6 +300,13 @@ TeamManagement.prototype.addTeamContacts = function(team_name,team_contacts){
             if(response.success){
                 terminal.print("Team contact added successfully");
                 TeamManagement.prototype.teamContacts = team_contacts;
+                if(TeamManagement.prototype.teamMembers == null){
+                    terminal.print("Add team members ...");
+                    terminal.print("command : ctf_add_members <members> -> member names should be separated by comma ");
+                }else{
+                    terminal.print("You are all set...Get to hacking!");
+                    terminal.print("command : let_the_hacking_begin");
+                }
                 TeamManagement.prototype.prompt();
 
             }else{
@@ -314,6 +333,14 @@ TeamManagement.prototype.addTeamMembers = function(team_name,team_members){
             if(response.success){
                 terminal.print("Team members added successfully");
                 TeamManagement.prototype.teamMembers = team_members;
+                if(TeamManagement.prototype.teamContacts == null){
+                    terminal.print("Add team contacts ...");
+                    terminal.print("command : ctf_add_contact <contact> -> add one or more mobile numbers(should be separated by comma)")
+                }else{
+                    terminal.print("You are all set...Get to hacking!");
+                    terminal.print("command : let_the_hacking_begin");
+                }
+                
                 TeamManagement.prototype.prompt();
 
             }else{

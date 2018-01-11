@@ -5,17 +5,17 @@
 
   MESSAGES.push({
     delay: 0,
-    text: "I don't go Dates. "
+    text: "i don't go Dates. "
   });
 
   MESSAGES.push({
     delay: 1200,
-    text: "I don't go clubbing. "
+    text: "i don't go clubbing. "
   });
 
   MESSAGES.push({
     delay: 2200,
-    text: "I don't cAre about cElebrity hookups ..."
+    text: "i don't cAre about cElebrity hookups ..."
   });
 
   MESSAGES.push({
@@ -25,7 +25,7 @@
 
   MESSAGES.push({
     delay: 5200,
-    text: "My universe exists eNtirely within computerS."
+    text: "my universe exists eNtirely within computerS."
   });
 
   $container = $("#container");

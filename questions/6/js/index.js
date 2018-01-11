@@ -63,7 +63,7 @@ var resolver = {
   /* Some GLaDOS quotes from Portal 2 chapter 9: The Part Where He Kills You
    * Source: http://theportalwiki.com/wiki/GLaDOS_voice_lines#Chapter_9:_The_Part_Where_He_Kills_You
    */
-};var strings = ['Tony Stark is again in a great danger.Killing you? Is hard. You know what my days used to be like? I just tested. Nobody murdered me. Or put me in a potato. Or fed me to birds. I had a pretty good life.', 'And then you showed up. You dangerous, mute lunatic. So you know what?', 'You win.', 'Just go.', 'It\'s been fun. Don\'t come back.', '......'];
+};var strings = [];
 
 var counter = 0;
 

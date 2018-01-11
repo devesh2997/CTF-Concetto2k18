@@ -5,28 +5,28 @@
 
   MESSAGES.push({
     delay: 0,
-    text: "Incoming test transmission..."
+    text: "Decrypt : "
   });
 
   MESSAGES.push({
     delay: 1200,
-    text: "You don't talk to anybody."
+    text: "eXhvY2t4biBqb2Iwb2M="
   });
 
-  MESSAGES.push({
-    delay: 2200,
-    text: "You don't interact with anybody."
-  });
+  // MESSAGES.push({
+  //   delay: 2200,
+  //   text: "You don't interact with anybody."
+  // });
 
-  MESSAGES.push({
-    delay: 3600,
-    text: "Your whole sense of reality is, pretty warped..."
-  });
+  // MESSAGES.push({
+  //   delay: 3600,
+  //   text: "Your whole sense of reality is, pretty warped..."
+  // });
 
-  MESSAGES.push({
-    delay: 5200,
-    text: "Does it bother you that we're not real?"
-  });
+  // MESSAGES.push({
+  //   delay: 5200,
+  //   text: "Does it bother you that we're not real?"
+  // });
 
   $container = $("#container");
 

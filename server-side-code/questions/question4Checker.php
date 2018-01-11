@@ -10,7 +10,7 @@ $db = new DB_Functions();
         if(isset($_POST['team_name']) && isset($_POST['flag'])){
             $team_name = $_POST['team_name'];
             $flag_sub = $_POST['flag'];
-            if($flag_sub == $corr_flag){
+            if(strcasecmp($flag_sub,$corr_flag)==0){
                 $result['is_correct']=true;
             }else{
                 $result['is_correct']=false;
