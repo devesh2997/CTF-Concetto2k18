@@ -145,9 +145,9 @@
             if($stmt_run=mysqli_query($this->conn,$stmt)){
                 $curr_team_members = mysqli_fetch_assoc($stmt_run);
 
-                //$curr_team_members = $curr_team_members['team_members'];
+                $curr_team_members = $curr_team_members['team_members'];
 
-                //$team_members = $curr_team_members.','.$team_members;
+                $team_members = $curr_team_members.','.$team_members;
 
                 $stmt2="UPDATE teams SET team_members='$team_members' WHERE team_name='$team_name'";
 
