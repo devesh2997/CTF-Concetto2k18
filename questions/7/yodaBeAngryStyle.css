@@ -8,6 +8,7 @@ body {
 
 #cipher_link:link{
     text-decoration: none;
+    color: darkgreen;
 }
 
 #cipher_link:visited{

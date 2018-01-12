@@ -1,2 +1,2 @@
 //host server ip
-var server = 'http://localhost/CTF-Concetto2k18/';
+var server = 'http://172.16.10.123/CTF-Concetto2k18/';

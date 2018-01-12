@@ -65,7 +65,7 @@ function checkFlag(flag_type){
         console.log('already answered');
         
         checkElement.innerHTML = "correct";
-        if(correctFlagsCount == 1){
+        if(correctFlagsCount == 8){
             questionAnswered();
         }
     }else{
@@ -83,7 +83,7 @@ function checkFlag(flag_type){
                     console.log('currrent:'+correctFlagsCount);
                     checkElement.innerHTML = "Correct";
                     checkElement.style.background = 'lightgreen';
-                    if(correctFlagsCount == 1){
+                    if(correctFlagsCount == 8){
                         questionAnswered();
                     }
                 }else{
