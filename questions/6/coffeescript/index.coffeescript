@@ -1,5 +1,5 @@
 MESSAGES = []
-MESSAGES.push delay:0,    text:"Incoming test transmission..."
+MESSAGES.push delay:0,    text:"Incoming transmission..."
 MESSAGES.push delay:1200, text:"You don't talk to anybody."
 MESSAGES.push delay:2200, text:"You don't interact with anybody."
 MESSAGES.push delay:3600, text:"Your whole sense of reality is, pretty warped..."

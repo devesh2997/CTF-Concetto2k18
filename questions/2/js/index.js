@@ -5,28 +5,28 @@
 
   MESSAGES.push({
     delay: 0,
-    text: "Decrypt : "
+    text: "i don't go Dates. "
   });
 
   MESSAGES.push({
     delay: 1200,
-    text: "0110100001100101011011000110110001101111011001100111001001101001011001010110111001100100"
+    text: "i don't go clubbing. "
   });
 
-  // MESSAGES.push({
-  //   delay: 2200,
-  //   text: "You don't interact with anybody."
-  // });
+  MESSAGES.push({
+    delay: 2200,
+    text: "i don't cAre about cElebrity hookups ..."
+  });
 
-  // MESSAGES.push({
-  //   delay: 3600,
-  //   text: "Your whole sense of reality is, pretty warped..."
-  // });
+  MESSAGES.push({
+    delay: 3600,
+    text: "or which sports teaMs just wOn. "
+  });
 
-  // MESSAGES.push({
-  //   delay: 5200,
-  //   text: "Does it bother you that we're not real?"
-  // });
+  MESSAGES.push({
+    delay: 5200,
+    text: "my universe exists eNtirely within computerS."
+  });
 
   $container = $("#container");
 

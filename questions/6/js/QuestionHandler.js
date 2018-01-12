@@ -61,7 +61,7 @@ function checkFlag(){
         }else if(this.readyState == 4 && this.status != 200){
         }
     }
-    xhttp.open("POST",server+ "server-side-code/questions/question6Checker.php", true);
+    xhttp.open("POST", server+"server-side-code/questions/question6Checker.php", true);
     xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xhttp.send("team_name="+QuestionHandler.prototype.teamName+"&flag="+flag);
 }

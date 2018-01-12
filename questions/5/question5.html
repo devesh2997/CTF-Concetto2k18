@@ -1,13 +1,12 @@
 <!DOCTYPE html>
 <html lang="en" >
+
 <head>
   <meta charset="UTF-8">
   <title>Question 5 @ CTF</title>
-  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script> 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js" type="text/javascript"></script>
 
   <script src="../config.js"></script>
-  
+
   <script  src="js/QuestionHandler.js"></script>
 
   <script> var questionHandler = new QuestionHandler(); questionHandler.init(); </script>
@@ -17,146 +16,195 @@
           checkFlag();
       }
   </script>
-
-
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
-
   
-      <style>
-          input:focus,
+  
+  <link rel='stylesheet prefetch' href='https://fonts.googleapis.com/css?family=Unica+One'>
+
+      <link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/stylea.css">
+
+  <style>
+    input:focus,
 select:focus,
 textarea:focus,
 button:focus {
     outline: none;
 }
-
-      body {
-        background-repeat:no-repeat;
-        background-size: cover;
-
-}
-
-.Iam {
-  padding: 2em 5em;
-  font: normal 40px/50px Montserrat, sans-serif;
-  color: #999;
-}
-.Iam p {
-  height: 50px;
-  float: left;
-  margin-right: 0.3em;
-}
-.Iam b {
-  float: left;
-  overflow: hidden;
-  position: relative;
-  height: 50px;
-  top: 40px;
-}
-.Iam .innerIam {
-  display: inline-block;
-  color: #e74c3c;
-  position: relative;
-  white-space: nowrap;
-  top: 0;
-  left: 0;
-
-
-/*animation*/
--webkit-animation:move 5s;
-   -moz-animation:move 5s;
-    -ms-animation:move 5s;
-     -o-animation:move 5s;
-        animation:move 5s;
-/*animation-iteration-count*/
--webkit-animation-iteration-count:infinite;
-   -moz-animation-iteration-count:infinite;
-    -ms-animation-iteration-count:infinite;
-     -o-animation-iteration-count:infinite;
-        animation-iteration-count:infinite;
-/*animation-delay*/
--webkit-animation-delay:2s;
-   -moz-animation-delay:2s;
-    -ms-animation-delay:2s;
-     -o-animation-delay:2s;
-        animation-delay:2s;
-}
-@keyframes move{
-0%  { top: 0px; }
-20% { top: -50px; }
-40% { top: -100px; }
-60% { top: -150px; }
-80% { top: -200px; }
-}
-
-@-webkit-keyframes move {
-    0%  { top: 0px; }
-    20% { top: -50px; }
-    40% { top: -100px; }
-    60% { top: -150px; }
-    80% { top: -200px; }
-}
-@-moz-keyframes move {
-    0%  { top: 0px; }
-    20% { top: -50px; }
-    40% { top: -100px; }
-    60% { top: -150px; }
-    80% { top: -200px; }
-}
-@-o-keyframes move {
-    0%  { top: 0px; }
-    20% { top: -50px; }
-    40% { top: -100px; }
-    60% { top: -150px; }
-    80% { top: -200px; }
-}
-@keyframes move {
-    0%  { top: 0px; }
-    20% { top: -50px; }
-    40% { top: -100px; }
-    60% { top: -150px; }
-    80% { top: -200px; }
-}
       /* NOTE: The styles were added inline because Prefixfree needs access to your styles and they must be inlined if they are on local disk! */
-      @font-face {
-    font-family: 'tat';
-    src: url('css/fonts/spc.ttf');
-}
-
       body {
   overflow: hidden;
-  padding: 0;
-  margin: 0;
-}
-canvas {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-}
-p, a {
-  text-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
-  font-family: Courier, monospace;
-  font-smoothing: antialiased;
-  margin: 0.8em 0;
-  font-size: 18px;
-  color: darkred;
-  font-weight: bold;
+  
 }
 
-.ghost,
-.glitch {
-  opacity: 0.25;
+#center {
+   width: 300px;
+   height: 300px;
+   position: absolute;
+   left: 85%;
+   top: 80%; 
+   margin-left: -150px;
+   margin-top: -150px;
+  transform: rotate(60deg);
 }
 
-
-#message {
-  margin-left: -570px;
-  margin-top: -30px;
-  position: absolute;
-  height: 260px;
-  width: 600px;
+#spaceship {
+  position: inherit;
   left: 50%;
+  margin-left: -90px;
+  height: 180px;
+  width: 130px;
+  background: #fff;
+  border-radius: 100px 100px 20px 20px;
+}
+#window {
+  position: inherit;
+  margin-top: 35px;
+  margin-left: 35px;
+  height: 40px;
+  width: 40px;
+  background: #BE2E6B;
+  border-radius: 50%;
+  border: 10px solid #562449;
+  animation: window 3s infinite linear;
+}
+
+#tail {
   top: 50%;
+  left: 50%;
+  margin-left: -106px;
+  margin-top: 40px;
+  position: inherit;
+  height: 0;
+  width: 120px;
+  border-bottom: 30px solid #E15050;
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  padding: 0 2px 0 0;
+}
+
+#left-wing {
+  top: 50%;
+  left: 50%;
+  margin-left: 48px;
+  margin-top: -60px;
+  position: inherit;
+  height: 0;
+  width: 20px;
+  border-bottom: 60px solid #E15050;
+  border-left: 0px solid transparent;
+  border-right: 30px solid transparent;
+  padding: 0 2px 0 0;
+  animation: from-to 3s infinite linear;
+}
+#right-wing {
+  top: 50%;
+  left: 50%;
+  margin-left: -150px;
+  margin-top: -60px;
+  position: inherit;
+  height: 0;
+  width: 20px;
+  border-bottom: 60px solid #E15050;
+  border-left: 30px solid transparent;
+  border-right: 0px solid transparent;
+  padding: 0 2px 0 0;
+  animation: to-from 3s infinite linear;
+}
+
+#exhaust {
+  left: 50%;
+  top: 50%; 
+  margin-left:  -62px;
+  margin-top: 40px;
+  position: inherit;
+  background:#131e55;
+  width: 70px;
+  height: 70px;
+  border-radius: 50px 10px 50px 50px;
+  transform: rotate(135deg);
+}
+
+#tail {
+  left: 50%;
+  top: 50%; 
+  margin-left:  -62px;
+  margin-top: 80px;
+  position: inherit;
+  width: 0px;
+  height: 0px;
+  border-style: solid;
+  border-width: 200px 34px 0 34px;
+  border-color: #E15050 transparent transparent transparent;
+  animation: burn .1s infinite linear;
+}
+
+
+@keyframes burn {
+	0% {border-width: 200px 34px 0 34px;}
+  25% {border-width: 100px 34px 0 34px;}
+  50% {border-width: 250px 34px 0 34px;}
+  75% {border-width: 150px 34px 0 34px;}
+	100% {border-width: 200px 34px 0 34px;}
+}
+
+@keyframes from-to {
+	0% {
+	  margin-left: 38px;
+	  width: 20px;
+	  border-bottom: 60px solid #BE2E6B;
+    border-left: 0px solid transparent;
+    border-right: 30px solid transparent;
+	}
+  50% {
+    margin-left: 48px;
+    width: 10px;
+    border-bottom: 60px solid #BE2E6B;
+    border-left: 0px solid transparent;
+    border-right: 15px solid transparent;
+  }
+  100% {
+    margin-left: 38px;
+	  width: 20px;
+	  border-bottom: 60px solid #BE2E6B;
+    border-left: 0px solid transparent;
+    border-right: 30px solid transparent;
+	}
+}
+
+@keyframes to-from {
+	0% {
+	  margin-left: -125px;
+	  width: 10px;
+	  border-bottom: 60px solid #BE2E6B;
+    border-left: 15px solid transparent;
+    border-right: 0px solid transparent;
+  }
+  50% {
+    margin-left: -140px;
+    width: 20px;
+    border-bottom: 60px solid #BE2E6B;
+    border-left: 30px solid transparent;
+    border-right: 0px solid transparent;
+  }
+  100% {
+	  margin-left: -125px;
+	  width: 10px;
+	  border-bottom: 60px solid #BE2E6B;
+    border-left: 15px solid transparent;
+    border-right: 0px solid transparent;
+  }
+}
+
+@keyframes window {
+	0% {
+	  margin-left: 25px;
+  }
+  50% {
+    margin-left: 45px;
+  }
+  100% {
+	  margin-left: 25px;
+  }
 }
 
 .input{
@@ -171,12 +219,12 @@ p, a {
     float: left;
 	width: 60px;
     margin-right: 10px;
-    color:darkred;
+    color:#00ff00;
 }
 .flag_input{
     background: transparent;
     width:500px;
-    color: darkred;    
+    color: #00ff00;    
     border-width: 0px 0px 0px 0px;
     border-color: darkred;
 }
@@ -194,160 +242,48 @@ p, a {
     background-color:#61F5A1;
 }
 
-#terminal{
-    margin-top: 200px;
-    
-}
-
-#animate {
-  text-shadow: 0 0 8px rgba(209, 194, 165, 0.1);
-  position: absolute;
-  color: #4f4228;
-  bottom: 0;
-}
-
-#container {
-  
-  position: absolute;
-  height: 55%;
-  width: 100%;
-  left: 0;
-  top: 0;
-}
-#container:before {
-  pointer-events: none;
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  content: "";
-  left: 0;
-  top: 0;
-  
-}
-
-.loaderBox {
-    width: 100%;
-    height: 100%;
-    
-    position: fixed;
-    top: 100;
-    left: 100;
-}
-.loadAnim {
-	top: 100;
-    left: 100;
-    width: 200px;
-    height: 200px;
-    margin-top: 35%;
-    margin-left: 85%;
-    position: relative;
-}
-.loadeAnim1,
-.loadeAnim2,
-.loadeAnim3 {
-    position: absolute;
-    border-radius: 100%;
-    border: 10px solid transparent;
-}
-.loadeAnim1 {
-    width: 150px;
-    height: 150px;
-    border-top: 10px solid #fff;
-    border-bottom: 10px solid #fff;
-    top: 15px;
-    margin: 5px;
-    left: 15px;
-    animation: leftToRight 2s linear infinite;
-}
-.loadeAnim2 {
-	margin: 5px;
-    width: 130px;
-    height: 130px;
-    border: 10px solid #Fff;
-    top: 25px;
-    left: 25px;
-}
-.loadeAnim3 {
-	margin: 5px;
-    width: 110px;
-    height: 110px;
-    border-right: 10px solid #ffffff;
-    border-left: 10px solid #ffffff;
-    top: 35px;
-    left: 35px;
-    animation: topToBottom 2s linear infinite;
-}
-@keyframes leftToRight {
-    from {transform: rotate(0deg);}
-    to {transform: rotate(360deg);}
-}
-
-@keyframes topToBottom {
-    from {transform: rotate(0deg);}
-    to {transform: rotate(-360deg);}
-}
-
-
-
     </style>
-
-    <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
 </head>
 
-<body background="background.jpg">
+<body background="abc.jpg">
+ 
+<div class="content" data-text="Nothing">Nothing</div>
+	<h1 class="heading" data-target-resolver></h1>
 
-
-
-<div class="loaderBox">
-        
-        <div class="loadAnim">
-            
-            <div class="loadeAnim1"></div>
-            <div class="loadeAnim2"></div>
-            <div class="loadeAnim3"></div>
-            
+  <div class="container">
+      <div class="input" >
+          <div class='flag_type'>
+              <span class='flag_text'>flag:~$> </span>
+              <input id="flaginput" class='flag_input' type="text" autofocus tabindex="0" onkeydown="if(event.keyCode==13) callCheck();">
+              <!-- flag is d3bug -->
+              <button id="flagcheck" class="flag_check" type="button" onclick="callCheck()" ></button>
+          </div>
         </div>
-        
-    </div>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gl-matrix/2.1.0/gl-matrix.js"></script>
-<script src="js/indexa.js"></script>
-<div class="Iam">
-
-
-<b>
-  <div class="innerIam">
-    Concetto<br /> 
-    Capture The Flag<br />
-    Question_5<br />
-    #Decode
-    </div>
-</b>
-
-</div id="super">
-  <div id="container" >
-  <div id="message">
-  </div>
-  <div class="input" >
-      <div class='flag_type'>
-          <span class='flag_text'>flag:~></span>
-          <input id="flaginput" class='flag_input' type="text" autofocus tabindex="0" onkeydown="if(event.keyCode==13) callCheck()">
-          <!-- flag is d3bug -->
-          <button id="flagcheck" class="flag_check" type="button" onclick="callCheck()" ></button>
-      </div>
-    </div>
+  
 </div>
+  
+  
 
-</div>
-
-  <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
     <script  src="js/index.js"></script>
     <script>
-            window.addEventListener('click',()=>{
-              document.querySelector("#flaginput").focus();
-            });
-          </script>
+        window.addEventListener('click',()=>{
+          document.querySelector("#flaginput").focus();
+        });
+      </script>
+
+
+ <div id='center'>
+  <div id='spaceship'>
+    <div id='window'></div>
+  </div>
+  <div id='tail'></div>
+  <div id='left-wing'></div>
+  <div id='right-wing'></div>
+  <div id='exhaust'></div>
+  <div id='tail'></div>
+</div>
 
 </body>
+
 </html>
