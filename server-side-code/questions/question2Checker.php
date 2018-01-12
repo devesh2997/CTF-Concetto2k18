@@ -17,7 +17,7 @@ $db = new DB_Functions();
             }
         }else if(isset($_POST['team_name'])){
             $team_name = $_POST['team_name'];
-            $result['success'] = $db->questionAnswered($team_name,4);
+            $result['success'] = $db->questionAnswered($team_name,2);
         }
     }else{
         $result['session_status']=false;
