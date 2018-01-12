@@ -85,6 +85,7 @@
                 $response['success']=true;
                 $response['msg']="Password set. ";
             }else{
+                echo mysqli_error($this->conn);
                 $response['success']=false;
                 $response['msg']="Some error occured in setting up your account!";
             }
