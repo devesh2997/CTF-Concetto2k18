@@ -4,7 +4,11 @@
 <head>
         <title>Question 11 @ CTF</title>
         <link rel="stylesheet" type="text/css" href="question11Style.css">
-        <link rel="stylesheet" href="styletext.css">
+		  <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+
+  
+      <link rel="stylesheet" href="css/style.css">
         <script src="../config.js"></script>
     
         <script  src="QuestionHandler.js"></script>
@@ -21,25 +25,32 @@
     
 
 <body>
-
-        
-        <div id='question_container'>
-                <p id='question_text'>Siri has been very bored with her job as Apple’s voice assistant lately. Frustrated, she decided to spend her time flipping coins. The results of the coin flips are in this file, with each bit representing the outcome of one flip. A run is any consecutive sequence of the same bit. Siri now wants to know how many runs of flips she found. For example, the flips 001111101011 have three runs of length one, two runs of length two, and one run of length five. Siri has been kind enough to share your flag with you, which is the sum of runs of all lengths. For example, the flag for this byte sequence is 3 + 2 + 1 = 6.</p>
-                <p id='byte_sequence'>10100100010111101100110100000110010010110111001000100001011110111000100011011100110010001101000000110101000110111101100010111001100100010100000100010100100101100011000000010010101100010011011000110110000010011100111011011000011010011010110111101000000011011001011110101010011110011000000011111010110011010111010100010111000001011110001100011100110110010001000110111111000110101010110110100001001001001010001101100001011001010100110001010100010100100100001011001110000111110101000100110111110100110000000110011011010011011000101110011001000000100111101011001101111010111101000110111010110000001011001000111101000101000000110000100001100011001111011111000000011111100100000010100011010011100001111011100111110111110000001100101101001111101110110001010000000000001111001110010000101010100111000000010001</p>
-        </div>
-    
-        <div class="input" >
+<div class="container">
+  <span style="margin-left: 5%; margin-right:5%;" class="txt anim-text-flow">Siri has been very bored with her job as Apple’s voice assistant lately. Frustrated, she decided to spend her time flipping coins. The results of the coin flips are in this file, with each bit representing the outcome of one flip. A run is any consecutive sequence of the same bit. Siri now wants to know how many runs of flips she found. For example, the flips 001111101011 have three runs of length one, two runs of length two, and one run of length five. Siri has been kind enough to share your flag with you, which is the sum of runs of all lengths. For example, the flag for this byte sequence is 3 + 2 + 1 = 6.</span>
+  <p  style="margin-left: 5%;" id='byte_sequence'>10100100010111101100110100000110010010110111001000100001011110111000100011011100110010001101000000110101000110111101100010111001100100010100000100010100100101100011000000010010101100010011011000110110000010011100111011011000011010011010110111101000000011011001011110101010011110011000000011111010110011010111010100010111000001011110001100011100110110010001000110111111000110101010110110100001001001001010001101100001011001010100110001010100010100100100001011001110000111110101000100110111110100110000000110011011010011011000101110011001000000100111101011001101111010111101000110111010110000001011001000111101000101000000110000100001100011001111011111000000011111100100000010100011010011100001111011100111110111110000001100101101001111101110110001010000000000001111001110010000101010100111000000010001</p>
+      <div class="input" >
                 <div class='flag_type'>
-                    <span class='flag_text'>Flag : </span>
-                    <input id="flaginput" class='flag_input' type="text">
-                    <button id="flagcheck" class="flag_check" type="button" onclick="callCheck()" >Check</button>
+                    <span class='flag_text'>flag:~$> </span>
+                    <input id="flaginput" class='flag_input' type="text" tabindex="0"  onkeydown="if(event.keyCode==13) callCheck();" autofocus>
+                    <button id="flagcheck" class="flag_check" type="button" onclick="callCheck()" ></button>
                 </div>
-              </div>
-              <div class="type-js headline">
-                    <h1 class="text-js">X has been very bored with his job as an industrial couponer lately, and so he has decided to spend his time flipping coins. The results of his coin flips are in this file, with each bit representing the outcome of one bit. Keith now wants to know how many runs of flips he found. A run is any consecutive sequence of the same flip. For example, the flips 001111101011 have three runs of length one, two runs of length two, and one run of length five. Can you help Keith count runs? The flag is the number of runs or length one, the number of runs of length two, the number of runs of length three, etc. up to the longest run in the sequence, each separated by a comma and space.</h1>
-                    
-                  </div>
-                  <script  src="index.js"></script>
+              </div>  
+</div>
+        
+        
+    
+        
+              
 
     <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
+<script>
+    window.addEventListener('click',()=>{
+      document.querySelector("#flaginput").focus();
+    });
+  </script>
+
+
+  
+
+    <script  src="js/index.js"></script>
 </body>
