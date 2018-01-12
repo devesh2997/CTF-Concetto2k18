@@ -76,7 +76,7 @@
         public function addTeam($team_name, $team_password){
             $hash = $this->hashSSHA($team_password);
             $encrypted_password = $hash["encrypted"]; // encrypted password
-            $salt = $hash["salt"]; // salt
+	    $salt = $hash["salt"]; // salt
 
             $stmt = "INSERT INTO teams(team_name,encrypted_password, salt) VALUES('$team_name','$encrypted_password', '$salt')";
             $result = mysqli_query($this->conn,$stmt);
@@ -84,7 +84,8 @@
             if($result){
                 $response['success']=true;
                 $response['msg']="Password set. ";
-            }else{
+	    }else{
+		echo mysqli_error($this->conn);
                 $response['success']=false;
                 $response['msg']="Some error occured in setting up your account!";
             }
