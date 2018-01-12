@@ -63,7 +63,7 @@ var resolver = {
   /* Some GLaDOS quotes from Portal 2 chapter 9: The Part Where He Kills You
    * Source: http://theportalwiki.com/wiki/GLaDOS_voice_lines#Chapter_9:_The_Part_Where_He_Kills_You
    */
-};var strings = [ 'wj ocy scrmhcp jvi schx msn qsgjfse hlx kskbr'];
+};var strings = ['Zip IT !!'];
 
 var counter = 0;
 

@@ -5,28 +5,28 @@
 
   MESSAGES.push({
     delay: 0,
-    text: "Decrypt : "
+    text: "Kim Jong Un has threatened to activate the large nuclear button on his desk. "
   });
 
   MESSAGES.push({
     delay: 1200,
-    text: "eXhvY2t4biBqb2Iwb2M="
+    text: "The MACH IV submarines carrying the Caesar X nuclear missiles fire their payload within 10 minutes of the button being pressed."
   });
 
-  // MESSAGES.push({
-  //   delay: 2200,
-  //   text: "You don't interact with anybody."
-  // });
+  MESSAGES.push({
+    delay: 2200,
+    text: "Anonymous hacked into his system but was only able to recover this password hint. "
+  });
 
-  // MESSAGES.push({
-  //   delay: 3600,
-  //   text: "Your whole sense of reality is, pretty warped..."
-  // });
+  MESSAGES.push({
+    delay: 3600,
+    text: "It is now up to you to save the world from a nuclear holocaust."
+  });
 
-  // MESSAGES.push({
-  //   delay: 5200,
-  //   text: "Does it bother you that we're not real?"
-  // });
+  MESSAGES.push({
+    delay: 5200,
+    text: "eXhvY2t4biBqb2Iwb2M="
+  });
 
   $container = $("#container");
 

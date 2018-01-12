@@ -1,7 +1,7 @@
 <?php 
 require_once '../include/DB_Functions.php';
 $db = new DB_Functions();
-    $corr_flag = 'onesand zer0es';
+    $corr_flag = 'hellofriend';
 
     session_start();
 
@@ -17,7 +17,7 @@ $db = new DB_Functions();
             }
         }else if(isset($_POST['team_name'])){
             $team_name = $_POST['team_name'];
-            $result['success'] = $db->questionAnswered($team_name,3);
+            $result['success'] = $db->questionAnswered($team_name,2);
         }
     }else{
         $result['session_status']=false;

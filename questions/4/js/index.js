@@ -5,21 +5,11 @@
 
   MESSAGES.push({
     delay: 0,
-    text: "Look beyond the obvious... "
+    text: "Talk is cheap ... "
   });
 
   MESSAGES.push({
     delay: 1200,
-    text: "It will be the source of your enlightenment... "
-  });
-
-  MESSAGES.push({
-    delay: 2200,
-    text: "Talk is cheap ..."
-  });
-
-  MESSAGES.push({
-    delay: 3600,
     text: "Show me the ____ "
   });
 

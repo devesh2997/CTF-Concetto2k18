@@ -63,7 +63,7 @@ var resolver = {
   /* Some GLaDOS quotes from Portal 2 chapter 9: The Part Where He Kills You
    * Source: http://theportalwiki.com/wiki/GLaDOS_voice_lines#Chapter_9:_The_Part_Where_He_Kills_You
    */
-};var strings = ['Will Buyers has been captured again by the Demogorgon. ', 'But this Demogorgon likes number series a lot, yeah more than taming the world. ', 'So he gives Will 5 terms of a series and Will has to find out the 27th term of the series, ', 'but Will has not been able to figure out the series. ', 'So help him out:-', 'Series - 1, 2, 5, 14, 42.'];
+};var strings = [ 'wj ocy scrmhcp jvi schx msn qsgjfse hlx kskbr'];
 
 var counter = 0;
 
@@ -92,7 +92,7 @@ var options = {
 
     var nextOptions = Object.assign({}, options, { resolveString: strings[counter] });
     resolver.resolve(nextOptions, callback);
-  }, 3000);
+  }, 1000);
 }
 
 resolver.resolve(options, callback);

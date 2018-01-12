@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Question 11 @ CTF</title>
+  <title>Question 6+7 @ CTF</title>
 
   <script src="../config.js"></script>
 
@@ -24,7 +24,7 @@
 <link rel="stylesheet" href="css/stylea.css">
 
   <style>
-    input:focus,
+input:focus,
 select:focus,
 textarea:focus,
 button:focus {
@@ -217,16 +217,16 @@ outline: none;
 }
 .flag_text{
     float: left;
-	width: 60px;
+	  width: 60px;
     margin-right: 10px;
-    color:#00ff00;
+    color: #00ff00;
 }
 .flag_input{
     background: transparent;
     width:500px;
     color: #00ff00;    
     border-width: 0px 0px 0px 0px;
-    border-color: darkred;
+    border-color: transparent;
 }
 
 .flag_check{
@@ -238,7 +238,9 @@ outline: none;
     border: none;
 }
 
-
+.flag_check:hover{
+    background-color:#61F5A1;
+}
 
     </style>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
@@ -246,14 +248,14 @@ outline: none;
 
 <body background="abc.jpg">
  
-<div class="content" data-text="Question 13">Question 13</div>
+<div class="content" data-text="Question 6+7">Question 6+7</div>
 	<h1 class="heading" data-target-resolver></h1>
 
   <div class="container">
       <div class="input" >
           <div class='flag_type'>
-              <span class='flag_text'>flag:~$></span>
-              <input id="flaginput" class='flag_input' type="text" autofocus tabindex="0" onkeydown="if(event.keyCode==13) callCheck()">
+              <span class='flag_text'>flag:~$> </span>
+              <input id="flaginput" class='flag_input' type="text" autofocus onkeydown="if(event.keyCode==13) callCheck();" tabindex="0">
               <button id="flagcheck" class="flag_check" type="button" onclick="callCheck()" ></button>
           </div>
         </div>
@@ -268,7 +270,6 @@ outline: none;
           document.querySelector("#flaginput").focus();
         });
       </script>
-
 
  <div id='center'>
   <div id='spaceship'>

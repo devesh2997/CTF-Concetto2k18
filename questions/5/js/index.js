@@ -63,7 +63,7 @@ var resolver = {
   /* Some GLaDOS quotes from Portal 2 chapter 9: The Part Where He Kills You
    * Source: http://theportalwiki.com/wiki/GLaDOS_voice_lines#Chapter_9:_The_Part_Where_He_Kills_You
    */
-};var strings = [];
+};var strings = ['An organisation had maintained a table of username and password pairs in their database for authenticating a user.','But the organisation forgot to upload the database to their server.'];
 
 var counter = 0;
 
@@ -92,7 +92,7 @@ var options = {
 
     var nextOptions = Object.assign({}, options, { resolveString: strings[counter] });
     resolver.resolve(nextOptions, callback);
-  }, 1000);
+  }, 3000);
 }
 
 resolver.resolve(options, callback);

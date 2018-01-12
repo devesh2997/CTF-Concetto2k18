@@ -86,7 +86,7 @@ var TextScramble = function () {
 // Example
 // ——————————————————————————————————————————————————
 
-var phrases = ['S0m3thing, ab0ut that 1mage, has been bugg1ng me since I was “16”!  Help me out!'];
+var phrases = ['The fsociety recovered the following zip file from the Shanghai Stock Exchange servers. ','They also uncovered the information that the Chinese are planning to launch a full scale DDoS attack on the NYSE Servers. ','The zip file contains a mysteriously deceiving image that they suspect might contain a key that provides them administrative access to the Chinese servers. ','The fsociety have outsourced this mammoth task to you. Are you up for the challenge?'];
 
 var el = document.querySelector('.text');
 var fx = new TextScramble(el);
@@ -94,7 +94,7 @@ var fx = new TextScramble(el);
 var counter = 0;
 var next = function next() {
   fx.setText(phrases[counter]).then(function () {
-    setTimeout(next, 3000);
+    setTimeout(next, 3500);
   });
   counter = (counter + 1) % phrases.length;
 };
