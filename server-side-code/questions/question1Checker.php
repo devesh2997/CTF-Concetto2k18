@@ -21,7 +21,13 @@ $db = new DB_Functions();
             $flag_type = $_POST['flag_type'];
             $flag_sub = $_POST['flag'];
             $corr_flag = $flag[$flag_type];
-            if($flag_sub == $corr_flag){
+            if($flag_type == 'rot_13'){
+                if(strcasecmp($flag_sub,$corr_flag)==0){
+                    $result['is_correct']=true;
+                }else{
+                    $result['is_correct']=false;
+                }
+            }else($flag_sub == $corr_flag){
                 $result['is_correct']=true;
             }else{
                 $result['is_correct']=false;

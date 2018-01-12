@@ -354,6 +354,6 @@ TeamManagement.prototype.addTeamMembers = function(team_name,team_members){
     }
     xhttp.open("POST", server+"/server-side-code/addTeamMembers.php", true);
     xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    xhttp.send("team_name="+team_name+"&team_members="+team_contacts);
+    xhttp.send("team_name="+team_name+"&team_members="+team_members);
 
 }

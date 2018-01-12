@@ -29,6 +29,24 @@ QuestionHandler.prototype.init = function(){
     xhttp.send();
 }
 
+function checkInput(){
+    console.log('check input');
+    var inputElement = document.getElementById('flaginput');
+    var checkElement = document.getElementById('flagcheck');
+
+    flag = inputElement.value;
+    if(flag%1000 == 0){
+        console.log('anser is corcet');
+        checkElement.innerHTML = "Correct";
+        checkElement.style.background = 'lightgreen';
+        document.location=server+'questions/9/congrats.html';
+    }else{
+        inputElement.innerHTML = "";
+        checkElement.innerHTML = "Wrong";
+        checkElement.style.background = 'darkred';
+    }
+}
+
 function checkFlag(){
     console.log('check fired');
 

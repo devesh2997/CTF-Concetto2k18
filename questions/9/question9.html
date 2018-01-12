@@ -4,19 +4,16 @@
 <head>
   <meta charset="UTF-8">
   <title>Question 9 @ CTF</title>
+  <script src="../config.js"></script>
+  <script  src="js/QuestionHandler.js"></script>
+  <script> var questionHandler = new QuestionHandler(); questionHandler.init(); </script>
 
   
 
 
   <script>
       callCheck = function(){
-        var inputElement = document.getElementById('flaginput');
-        var checkElement = document.getElementById('flagcheck');
-
-        flag = inputElement.value;
-        if(flag%1000 == 0){
-          document.location='http://172.16.10.123/CTF-Concetto2k18/questions/9/congrats.html';
-        }
+        checkInput();
       }
   </script>
   
