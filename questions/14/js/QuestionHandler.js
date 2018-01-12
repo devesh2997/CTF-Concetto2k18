@@ -14,7 +14,7 @@ QuestionHandler.prototype.init = function(){
                 console.log('loged in');
                 QuestionHandler.prototype.teamName = response.team_name;
                 var currQuestion = response.current_question;
-                if(!(currQuestion >= 11) ){
+                if(!(currQuestion >= 14) ){
                     document.location = server+'questions/'+currQuestion+'/question'+currQuestion+'.html';
                 }
             }else{                
@@ -61,7 +61,7 @@ function checkFlag(){
         }else if(this.readyState == 4 && this.status != 200){
         }
     }
-    xhttp.open("POST", server+"server-side-code/questions/question11Checker.php", true);
+    xhttp.open("POST", server+"server-side-code/questions/question14Checker.php", true);
     xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xhttp.send("team_name="+QuestionHandler.prototype.teamName+"&flag="+flag);
 }
@@ -76,7 +76,7 @@ function checkFlag(){
                 console.log('loged in');
                 if(response.success){
                     
-                    document.location=server+'/questions/12/question12.html';
+                    document.location=server+'/questions/15/question15.html';
                 }else{
                 }
             }else{                
@@ -86,7 +86,7 @@ function checkFlag(){
         }else if(this.readyState == 4 && this.status != 200){
         }
     }
-    xhttp.open("POST", server+"server-side-code/questions/question11Checker.php", true);
+    xhttp.open("POST", server+"server-side-code/questions/question14Checker.php", true);
     xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xhttp.send("team_name="+QuestionHandler.prototype.teamName);
     }

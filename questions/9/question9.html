@@ -5,15 +5,18 @@
   <meta charset="UTF-8">
   <title>Question 9 @ CTF</title>
 
-  <script src="../config.js"></script>
+  
 
-  <script  src="js/QuestionHandler.js"></script>
-
-  <script> var questionHandler = new QuestionHandler(); questionHandler.init(); </script>
 
   <script>
       callCheck = function(){
-          checkFlag();
+        var inputElement = document.getElementById('flaginput');
+        var checkElement = document.getElementById('flagcheck');
+
+        flag = inputElement.value;
+        if(flag%1000 == 0){
+          document.location='http://172.16.10.123/CTF-Concetto2k18/questions/9/congrats.html';
+        }
       }
   </script>
   
@@ -23,8 +26,17 @@
       <link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="css/stylea.css">
 
+
   <style>
-      /* NOTE: The styles were added inline because Prefixfree needs access to your styles and they must be inlined if they are on local disk! */
+
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}
+/* NOTE: The styles were added inline because Prefixfree needs access to your styles and they must be inlined if they are on local disk! */
       body {
   overflow: hidden;
   
@@ -201,17 +213,13 @@
   }
 }
 
-.zip_link{
-    position: fixed;
-    bottom: 50%;
-    left: 10%;
-}
-
 .input{
     position: fixed;
     bottom: 30%;
     left: 10%;
 }
+
+
 .flag_type{
     margin:15px;
 }
@@ -219,13 +227,13 @@
     float: left;
 	width: 60px;
     margin-right: 10px;
-    color:darkred;
+    color: #00ff00;
 }
 .flag_input{
-    background: black;
+    background: transparent;
     width:500px;
-    color: #61F5A1;    
-    border-width: 0px 0px 2px 0px;
+    color: #00ff00;    
+    border-width: 0px 0px 0px 0px;
     border-color: darkred;
 }
 
@@ -234,7 +242,7 @@
     margin-left: 10px;
 	width: 60px;
     color:white;
-    background-color: darkgreen;
+    background-color: transparent;
     border: none;
 }
 
@@ -248,18 +256,15 @@
 
 <body background="abc.jpg">
  
-<div class="content" data-text="Question 9">Question 9</div>
+<div class="content" data-text="A Digital Frontier">A Digital Frontier</div>
 	<h1 class="heading" data-target-resolver></h1>
 
   <div class="container">
-      <div class="zip_link">
-            <a target="_blank" href="http://localhost/CTF-Concetto2k18/server-side-code/questions/question9FileDownload.php">This is a Link.</a>
-      </div>
       <div class="input" >
           <div class='flag_type'>
-              <span class='flag_text'>Flag : </span>
-              <input id="flaginput" class='flag_input' type="text">
-              <button id="flagcheck" class="flag_check" type="button" onclick="callCheck()" >Check</button>
+              <span class='flag_text'>flag:~$> </span>
+              <input id="flaginput" class='flag_input' type="text" value="1569" autofocus tabindex="0" onkeydown="if(event.keyCode==13) callCheck();">
+              <button id="flagcheck" class="flag_check" type="button" onclick="callCheck()" ></button>
           </div>
         </div>
   
@@ -268,7 +273,11 @@
   
 
     <script  src="js/index.js"></script>
-
+    <script>
+        window.addEventListener('click',()=>{
+          document.querySelector("#flaginput").focus();
+        });
+      </script>
 
  <div id='center'>
   <div id='spaceship'>

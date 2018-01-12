@@ -1,0 +1,44 @@
+body {
+}
+
+#hint_text{
+}
+
+
+
+#question_container{
+
+}
+
+#byte_sequence{
+
+}
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}
+
+.input{
+	background: transparent;
+}
+.flag_type{
+}
+.flag_text{
+	background: transparent;
+	color: #00ff00;
+}
+.flag_input{
+	background: transparent;
+	border: none;
+	color: #00ff00;
+}
+
+.flag_check{
+	background: transparent;
+	border: none;
+}
+
+.flag_check:hover{
+}

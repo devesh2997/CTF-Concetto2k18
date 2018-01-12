@@ -1,7 +1,7 @@
 <?php 
 require_once '../include/DB_Functions.php';
 $db = new DB_Functions();
-    $corr_flag = 'it3rat0r';
+    $corr_flag = '1002242216651368';
 
     session_start();
 

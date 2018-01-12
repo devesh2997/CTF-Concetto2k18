@@ -6,6 +6,13 @@ body {
 #hint_text{
 }
 
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}
+
 
 
 #cipher_container{
@@ -35,18 +42,19 @@ body {
 .flag_text{
     
     font-family: 'Times New Roman', Times, 'sans serif';
-    font-size: 1.5em;
+    font-size: 1.2em;
     float: left;
 	width: 60px;
     margin-right: 10px;
-    color:darkred;
+    color:#2ea82e;
+    margin-left: 10px;
 }
 .flag_input{
-    background: black;
-    font-size: 1.5em;
+    background: transparent;
+    font-size: 1.2em;
     width:500px;
-    color: #61F5A1;    
-    border-width: 0px 0px 2px 0px;
+    color: #2ea82e;    
+    border-width: 0px 0px 0px 0px;
     border-color: darkred;
 }
 
@@ -55,7 +63,7 @@ body {
     float: right;
     margin-left: 10px;
     color:white;
-    background-color: darkgreen;
+    background-color: transparent;
     border: none;
     padding: 8px;
 }

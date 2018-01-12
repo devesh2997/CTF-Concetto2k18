@@ -24,6 +24,12 @@
   
   
       <style>
+          input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+outline: none;
+}
       /* NOTE: The styles were added inline because Prefixfree needs access to your styles and they must be inlined if they are on local disk! */
       @import 'https://fonts.googleapis.com/css?family=Roboto+Mono:100';
 html,
@@ -60,28 +66,32 @@ body {
     float: left;
 	width: 60px;
     margin-right: 10px;
-    color:darkred;
+    color:#00ff00;
 }
 .flag_input{
-    background: black;
+    background: transparent;
     width:500px;
-    color: #61F5A1;    
-    border-width: 0px 0px 2px 0px;
-    border-color: darkred;
+    color: #61F5A1;
+    border: none;    
+    
+	
 }
-
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}
 .flag_check{
     float: right;
     margin-left: 10px;
 	width: 60px;
     color:white;
-    background-color: darkgreen;
+    background-color: transparent;
     border: none;
 }
 
-.flag_check:hover{
-    background-color:#61F5A1;
-}
+
 
     </style>
 
@@ -93,20 +103,24 @@ body {
 <div style="margin-left: 1300px; margin-top: 100px;"><div class="circle">
 </div></div>
 
-<div style="margin-left: -800px; margin-top: 100px;"><div class="container">
+<div style="margin-left: -500px; margin-top: 100px;"><div class="container">
     <div class="input" >
         <div class='flag_type'>
-            <span class='flag_text'>Flag : </span>
-            <input id="flaginput" class='flag_input' type="text">
-            <button id="flagcheck" class="flag_check" type="button" onclick="callCheck()" >Check</button>
+            <span class='flag_text'>flag:~$> </span>
+            <input id="flaginput" class='flag_input' type="text" onKeyDown="if(event.keyCode==13) callCheck();" tabindex="0" autofocus>
+            <button id="flagcheck" class="flag_check" type="button" onclick="callCheck()" ></button>
         </div>
       </div>
   <div class="text"></div></div>
   
 </div>
 
-  
-<div style="margin-left: 1200px; margin-top: 150px;">
+  <script>
+  	window.addEventListener('click',()=>{
+  		document.querySelector("#flaginput").focus();
+  	});
+  </script>
+<div style="margin-left: 60%; margin-top: -5%;">
   <div class="wrapper">
   <div class="hulk">
     <div class="head"><div class="mouth"></div></div>
@@ -158,6 +172,11 @@ body {
 
 
     <script  src="js/index.js"></script>
+    <script>
+            window.addEventListener('click',()=>{
+              document.querySelector("#flaginput").focus();
+            });
+          </script>
 
 <script  src="js/index_arcr.js"></script>
 

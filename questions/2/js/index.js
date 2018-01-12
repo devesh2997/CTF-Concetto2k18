@@ -5,27 +5,27 @@
 
   MESSAGES.push({
     delay: 0,
-    text: "Incoming transmission..."
+    text: "i don't go Dates. "
   });
 
   MESSAGES.push({
     delay: 1200,
-    text: "You don't talk to anybody."
+    text: "i don't go clubbing. "
   });
 
   MESSAGES.push({
     delay: 2200,
-    text: "You don't interact with anybody."
+    text: "i don't cAre about cElebrity hookups ..."
   });
 
   MESSAGES.push({
     delay: 3600,
-    text: "Your whole sense of reality is, pretty warped..."
+    text: "or which sports teaMs just wOn. "
   });
 
   MESSAGES.push({
     delay: 5200,
-    text: "Does it bother you that we're not real?"
+    text: "my universe exists eNtirely within computerS."
   });
 
   $container = $("#container");

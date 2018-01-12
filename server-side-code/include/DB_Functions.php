@@ -107,8 +107,19 @@
                     if ($encrypted_password == $hash) {
                         // user authentication details are correct
                         $result['success']=true;
-                        $result['team_members']=$this->getTeamMembers($team_name);
-                        $result['team_contacts']=$this->getTeamContacts($team_name);
+                        $team_members = $this->getTeamMembers($team_name);
+                        $team_contacts = $this->getTeamContacts($team_name);
+                        if($team_members){
+                            $result['team_members']=$team_members;
+                        }else{
+                            $result['team_members']=null;                            
+                        }
+                        if($team_contacts){
+                            $result['team_contacts']=$team_contacts;
+                        }else{
+                            $result['team_contacts']=null;                            
+                        }                        
+                        
                         $result['msg']='Logged in .';
                     }else{
                         $result['success']=false;
@@ -134,7 +145,9 @@
             if($stmt_run=mysqli_query($this->conn,$stmt)){
                 $curr_team_members = mysqli_fetch_assoc($stmt_run);
 
-                $team_members = $curr_team_members.','.$team_members;
+                //$curr_team_members = $curr_team_members['team_members'];
+
+                //$team_members = $curr_team_members.','.$team_members;
 
                 $stmt2="UPDATE teams SET team_members='$team_members' WHERE team_name='$team_name'";
 
@@ -145,6 +158,7 @@
                 }
 
             }else{
+                echo "team members adding error";
                 return false;
             }
         }
@@ -154,8 +168,10 @@
             
             if($stmt_run=mysqli_query($this->conn,$stmt)){
                 $curr_contact = mysqli_fetch_assoc($stmt_run);
+
+                $curr_contact = $curr_contact['team_contact'];
             
-                $team_contact = $curr_contact.','.$team_contact;
+                $team_contact = $curr_contact.$team_contact.',';
             
                 $stmt2="UPDATE teams SET team_contact='$team_contact' WHERE team_name='$team_name'";
             
@@ -208,6 +224,8 @@
                     }else{
                         return false;
                     }
+                }else if($question_id<=$id){
+                    return true;
                 }
 
             
@@ -224,7 +242,7 @@
                 $row = mysqli_fetch_assoc($stmt_run);
             
                 $team_members = $row['team_members'];
-                if($team_members == null){
+                if($team_members == null ||$team_members == ''){
                     return false;
                 }else{
                     return $team_members;
@@ -244,7 +262,7 @@
                 $row = mysqli_fetch_assoc($stmt_run);
             
                 $team_contact = $row['team_contact'];
-                if($team_contact == null){
+                if($team_contact == null || $team_contact == ''){
                     return false;
                 }else{
                     return $team_contact;

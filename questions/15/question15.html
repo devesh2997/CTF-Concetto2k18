@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+
+<head>
+  <meta charset="UTF-8">
+  <title>Question 15 @ CTF</title>
+
+  <script src="../config.js"></script>
+
+  <script  src="js/QuestionHandler.js"></script>
+
+  <script> var questionHandler = new QuestionHandler(); questionHandler.init(); </script>
+
+  <script>
+      callCheck = function(){
+          checkFlag();
+      }
+  </script>
+
+<link rel="stylesheet" href="css/style_arcr.css">
+  
+      <link rel="stylesheet" href="css/style_avengers.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+  
+  
+      <style>
+           input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+outline: none;
+}
+  
+      /* NOTE: The styles were added inline because Prefixfree needs access to your styles and they must be inlined if they are on local disk! */
+      @import 'https://fonts.googleapis.com/css?family=Roboto+Mono:100';
+html,
+body {
+  font-family: 'Roboto Mono', monospace;
+  background: #212121;
+  height: 100%;
+}
+.container {
+  height: 100%;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+.zip_link{
+    position: fixed;
+    bottom: 40%;
+    left: 10%;
+    color: aquamarine;
+    text-decoration-style: solid
+}
+.text {
+  font-weight: 100;
+  font-size: 28px;
+  color: #fafafa;
+}
+.dud {
+  color: #757575;
+}
+
+.input{
+    position: fixed;
+    bottom: 30%;
+    left: 10%;
+}
+.flag_type{
+    margin:15px;
+}
+.flag_text{
+    float: left;
+	width: 60px;
+    margin-right: 10px;
+    color: #00ff00;
+}
+.flag_input{
+    background: transparent;
+    width:500px;
+    color: #00ff00;    
+    border-width: 0px 0px 0px 0px;
+    border-color: #00ff00;
+}
+
+.flag_check{
+    float: right;
+    margin-left: 10px;
+	width: 60px;
+    color:white;
+    background-color: transparent;
+    border: none;
+}
+
+.flag_check:hover{
+    background-color:#61F5A1;
+}
+
+    </style>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+
+</head>
+
+<body>
+<div style="margin-left: 1300px; margin-top: 100px;"><div class="circle">
+</div></div>
+
+<div style="margin-left: 5%; margin-top: 2%;"><div class="container">
+        <div class="zip_link">
+                <a target="_blank" href="https://drive.google.com/open?id=1ZNzbzng62VthzPunKAWrkp_M6eiffIOF">This is a Link.</a>
+          </div>
+    <div class="input" >
+        <div class='flag_type'>
+            <span class='flag_text'>flag:~$> </span>
+            <input id="flaginput" class='flag_input' type="text" autofocus tabindex="0" onkeydown="if(event.keyCode==13) callCheck();">
+            <button id="flagcheck" class="flag_check" type="button" onclick="callCheck()" ></button>
+        </div>
+      </div>
+  <div class="text"></div></div>
+  
+</div>
+
+  
+<div style="margin-left: 900px; margin-top: 150px;">
+  <div class="wrapper">
+  <div class="hulk">
+    <div class="head"><div class="mouth"></div></div>
+    <div class="right-arm"></div>
+    <div class="fist"></div>
+    <div class="left-arm"></div>
+    <div class="body"></div>
+    <div class="right-leg"></div>
+    <div class="left-leg"></div>
+  </div>
+  
+  <div class="captain">
+    <div class="head">A</div>
+    <div class="body"><div class="star"></div></div>
+    <div class="arms"></div>
+    <div class="shield"><div class="star"></div></div> 
+    <div class="hands"></div>
+    <div class="legs"></div>
+    <div class="boots"></div>
+  </div>
+  
+  <div class="ironman">
+    <div class="helmet"><div class="mask"></div></div>
+    <div class="right-arm"></div>
+    <div class="left-arm"></div>
+    <div class="body"><div class="power"></div></div>
+    <div class="right-leg"></div>
+    <div class="left-leg"></div>
+  </div>  
+
+<div class="thor">
+    <div class="helmet"></div>
+    <div class="head">
+      <div class="beard"></div>
+    </div>
+    <div class="cap"></div>
+    <div class="arm-right"></div>
+    <div class="arm-left"></div>
+    <div class="body"></div>
+    <div class="hammer"></div>
+    <div class="legs"></div>
+    <div class="feet"></div>
+  </div> 
+</div>
+
+
+</div>
+</div>
+
+
+    <script  src="js/index.js"></script>
+
+<script  src="js/index_arcr.js"></script>
+
+
+
+</body>
+
+</html>

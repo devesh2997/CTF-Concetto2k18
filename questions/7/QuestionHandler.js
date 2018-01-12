@@ -13,12 +13,12 @@ QuestionHandler.prototype.init = function(){
             if(response.status){
                 console.log('loged in');
                 QuestionHandler.prototype.teamName = response.team_name;
-                document.location=server;
                 var currQuestion = response.current_question;
                 if(!(currQuestion >= 7) ){
                     document.location = server+'questions/'+currQuestion+'/question'+currQuestion+'.html';
                 }
-            }else{                
+            }else{ 
+                document.location=server;               
                 console.log('loggged out');
             }
         }else if(this.readyState == 4 && this.status != 200){

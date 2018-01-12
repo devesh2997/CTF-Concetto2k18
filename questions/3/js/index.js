@@ -5,27 +5,37 @@
 
   MESSAGES.push({
     delay: 0,
-    text: "Incoming test transmission..."
-  });
-
-  MESSAGES.push({
-    delay: 1200,
-    text: "You don't talk to anybody."
+    text: "Far out in the uncharted backwaters of the unfashionable end of the western spiral arm of the Galaxy lies a small unregarded yellow sun."
   });
 
   MESSAGES.push({
     delay: 2200,
-    text: "You don't interact with anybody."
+    text: "At a distance of ‘eight’ million miles from it, people found a weird communication device. "
   });
 
   MESSAGES.push({
-    delay: 3600,
-    text: "Your whole sense of reality is, pretty warped..."
+    delay: 3500,
+    text: "It had ‘eight’ bulbs on it. The instructions on the box said that a lit bulb denoted a 1, while an unlit bulb denoted 0."
   });
 
   MESSAGES.push({
-    delay: 5200,
-    text: "Does it bother you that we're not real?"
+    delay: 4800,
+    text: "The set of bulbs refreshed with seemingly random patterns every ‘eight’ seconds."
+  });
+
+  MESSAGES.push({
+    delay: 5800,
+    text: "Mr. X recorded this sequence before passing away under mysterious circumstances. "
+  });
+
+  MESSAGES.push({
+    delay: 6500,
+    text: "What possibly could have been the message..? "
+  });
+
+  MESSAGES.push({
+    delay: 7000,
+    text: "0110100001100101011011000110110001101111011001100111001001101001011001010110111001100100"
   });
 
   $container = $("#container");
