@@ -75,8 +75,8 @@ function checkFlag(){
             if(response.session_status){
                 console.log('loged in');
                 if(response.success){
-                    
-                    alert('done');
+                    document.location='https://goo.gl/forms/NWixx5oFYqY2xvrT2";
+                   // alert('done');
                 }else{
                 }
             }else{                
