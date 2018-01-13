@@ -63,7 +63,7 @@ var resolver = {
   /* Some GLaDOS quotes from Portal 2 chapter 9: The Part Where He Kills You
    * Source: http://theportalwiki.com/wiki/GLaDOS_voice_lines#Chapter_9:_The_Part_Where_He_Kills_You
    */
-};var strings = ['An organisation had maintained a table of username and password pairs in their database for authenticating a user.','But the organisation forgot to upload the database to their server.'];
+};var strings = ['Much ado about nothing.'];
 
 var counter = 0;
 
